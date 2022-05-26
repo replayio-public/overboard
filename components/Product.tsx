@@ -1,10 +1,9 @@
-import { Canvas } from '@react-three/fiber'
-import { OrbitControls } from '@react-three/drei'
 import dynamic from 'next/dynamic'
-import { Logo } from './Logo'
-import { Colors, Color } from './Colors/Colors'
 
-const Scene = dynamic(() => import('./Scene'), { ssr: false })
+import { Logo } from './Logo'
+import { Colors, Color } from './Colors'
+
+const Hoverboard = dynamic(() => import('./Hoverboard'), { ssr: false })
 
 const colorStops: Record<string, [string, string, string]> = {
   replay: ['#D35DF0', '#83345F', '#F94CE8'],
@@ -76,11 +75,7 @@ export function Product() {
           gridTemplateColumns: '2fr 1fr 0.25fr',
         }}
       >
-        <img src="/board.png" />
-        {/* <Canvas shadows flat linear>
-          <Scene />
-          <OrbitControls />
-        </Canvas> */}
+        <Hoverboard />
 
         <div
           style={{
@@ -99,10 +94,7 @@ export function Product() {
             }}
           >
             <h1>BugSlayer</h1>
-            <p>
-              The latest model from Replay.io offers the fastest way to debug
-              your application.
-            </p>
+            <p>The fastest way to debug applications</p>
             <ul
               style={{
                 display: 'flex',

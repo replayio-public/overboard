@@ -120,10 +120,10 @@ export default function Scene({ ...props }) {
         <OrthographicCamera
           name="Personal Camera"
           makeDefault={true}
-          zoom={1.85}
+          zoom={2.27}
           far={100000}
           near={-100000}
-          position={[117.96, 1003.08, -25.12]}
+          position={[7.82, 1003.08, 15.74]}
           rotation={[-1.57, 0, 0]}
         />
         <hemisphereLight
