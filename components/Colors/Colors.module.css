@@ -1,0 +1,26 @@
+.Colors {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.Color {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 100%;
+}
+
+.Color input {
+  appearance: none;
+  width: 100px;
+  height: 100px;
+  transform: scale(1);
+  transition: scale 180ms ease-out;
+}
+
+.Color input:checked {
+  border-radius: 100%;
+  transform: scale(0.85);
+}
