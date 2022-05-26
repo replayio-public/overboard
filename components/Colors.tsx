@@ -1,8 +1,6 @@
 import { Children, cloneElement, isValidElement } from 'react'
 import type { ReactNode } from 'react'
 
-import styles from './Colors.module.css'
-
 export function Colors({
   children,
   onChange,
@@ -11,7 +9,7 @@ export function Colors({
   onChange: (value: string) => void
 }) {
   return (
-    <div className={styles.Colors}>
+    <div className="Colors">
       {Children.map(children, (child) =>
         isValidElement(child)
           ? cloneElement(child, {
@@ -41,7 +39,7 @@ export function Color({
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
 }) {
   return (
-    <label className={styles.Color} aria-label={label}>
+    <label className="Color" aria-label={label}>
       <input
         type="radio"
         name={name}
