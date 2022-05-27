@@ -18,7 +18,7 @@ export function PurchaseButton() {
         justifyContent: 'center',
         gap: '0.8rem',
         borderRadius: '2rem',
-        width: 248,
+        width: '16rem',
         position: 'relative',
         overflow: 'hidden',
       }}
@@ -28,7 +28,7 @@ export function PurchaseButton() {
           display: 'flex',
           gap: 'inherit',
           opacity: error ? 0 : 1,
-          y: error ? -20 : 0,
+          y: error ? -24 : 0,
         }}
         transition={{
           opacity: { duration: 0.2 },
@@ -69,18 +69,19 @@ export function PurchaseButton() {
         Buy Now
       </motion.span>
 
-      <motion.span
-        style={{ position: 'absolute' }}
-        animate={{
-          y: error ? 0 : 24,
-          opacity: error ? 1 : 0,
-        }}
-        transition={{
-          opacity: { duration: 0.2 },
-        }}
-      >
-        Error
-      </motion.span>
+      <AnimatePresence>
+        {error && (
+          <motion.span
+            style={{ position: 'absolute' }}
+            initial={{ y: 24, scale: 1.05, opacity: 0 }}
+            animate={{ y: 0, scale: 1, opacity: 1 }}
+            exit={{ y: 24, scale: 0.99, opacity: 0 }}
+            transition={{ opacity: { duration: 0.2 } }}
+          >
+            Error
+          </motion.span>
+        )}
+      </AnimatePresence>
     </motion.button>
   )
 }

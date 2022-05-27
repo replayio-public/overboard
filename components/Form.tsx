@@ -19,7 +19,7 @@ export function Form() {
       style={{
         display: 'flex',
         flexDirection: 'column',
-        gap: '4rem',
+        gap: '5rem',
       }}
     >
       <div
@@ -43,16 +43,7 @@ export function Form() {
         </Colors>
       </div>
 
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-        }}
-      >
-        <PurchaseButton />
-      </div>
+      <PurchaseButton />
     </form>
   )
 }

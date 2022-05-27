@@ -29,7 +29,7 @@ h1 {
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 p {
@@ -89,6 +89,15 @@ button {
   border-radius: 100%;
   transform: scale(1);
   transition: transform 180ms ease-out;
+  background-image: linear-gradient(
+    135deg,
+    var(--stop-1) 0%,
+    var(--stop-1) 33.33%,
+    var(--stop-2) 33.33%,
+    var(--stop-2) 66.66%,
+    var(--stop-3) 66.66%,
+    var(--stop-3) 100%
+  );
 }
 
 .Color input:checked {

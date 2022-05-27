@@ -21,7 +21,7 @@ export function Color({
 }: {
   label: string
   value: string
-  defaultChecked: boolean
+  defaultChecked?: boolean
   stops: [string, string, string]
   name?: string
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
@@ -34,9 +34,13 @@ export function Color({
         value={value}
         defaultChecked={defaultChecked}
         onChange={onChange}
-        style={{
-          backgroundImage: `linear-gradient(135deg, ${stops[0]} 0%, ${stops[0]} 33.33%, ${stops[1]} 33.33%, ${stops[1]} 66.66%, ${stops[2]} 66.66%, ${stops[2]} 100%)`,
-        }}
+        style={
+          {
+            '--stop-1': stops[0],
+            '--stop-2': stops[1],
+            '--stop-3': stops[2],
+          } as any
+        }
       />
     </label>
   )
