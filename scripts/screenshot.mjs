@@ -4,21 +4,27 @@ async function start() {
   console.log('Starting browser...')
 
   const browser = await chromium.launch()
-  const page = await browser.newPage({ deviceScaleFactor: 3 })
+  const canvasPage = await browser.newPage({ deviceScaleFactor: 2 })
 
   console.log('Taking hoverboard screenshot...')
 
-  await page.goto('http://localhost:3000/?three=true')
+  await canvasPage.goto('http://localhost:3000/?three=true')
 
-  await page.locator('canvas').screenshot({ path: 'public/hoverboard.png' })
+  await canvasPage
+    .locator('canvas')
+    .screenshot({ path: 'public/hoverboard.png' })
+
+  await canvasPage.close()
 
   console.log('Taking open graph screenshot...')
 
-  await page.goto('http://localhost:3000/')
+  const fullPage = await browser.newPage()
 
-  await page.setViewportSize({ width: 1200, height: 630 })
+  await fullPage.goto('http://localhost:3000/')
 
-  await page.screenshot({ path: 'public/og-image.png' })
+  await fullPage.setViewportSize({ width: 1200, height: 630 })
+
+  await fullPage.screenshot({ path: 'public/og-image.png' })
 
   console.log('Done 📸')
 
