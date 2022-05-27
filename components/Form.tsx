@@ -1,5 +1,6 @@
 import { Colors, Color } from './Colors'
 import { colorStops } from './Product'
+import { PurchaseButton } from './PurchaseButton'
 
 export function Form() {
   return (
@@ -30,8 +31,13 @@ export function Form() {
       >
         <h2>Color</h2>
 
-        <Colors onChange={(value) => console.log(value)}>
-          <Color label="Replay" value="replay" stops={colorStops.replay} />
+        <Colors>
+          <Color
+            label="Replay"
+            value="replay"
+            defaultChecked
+            stops={colorStops.replay}
+          />
           <Color label="Rasta" value="rasta" stops={colorStops.rasta} />
           <Color label="Ocean" value="ocean" stops={colorStops.ocean} />
         </Colors>
@@ -45,17 +51,8 @@ export function Form() {
           justifyContent: 'space-between',
         }}
       >
-        <Price />
         <PurchaseButton />
       </div>
     </form>
   )
-}
-
-function Price() {
-  return <span style={{ fontSize: '2rem', fontWeight: 500 }}>$419.00</span>
-}
-
-function PurchaseButton() {
-  return <button>Purchase Now</button>
 }
