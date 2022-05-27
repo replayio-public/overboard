@@ -1,12 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-type RequestData = {
-  colorId: string
-}
+type RequestData = { colorId: string }
 
-type ResponseData = {
-  data: string
-}
+type ResponseData = { message: string }
 
 export default (
   request: NextApiRequest,
@@ -17,10 +13,10 @@ export default (
   if (!body.colorId) {
     return response
       .status(400)
-      .json({ data: `Color not found, received: ${body.colorId}` })
+      .json({ message: `Color not found, received: ${body.colorId}` })
   }
 
   response
     .status(200)
-    .json({ data: `Color "${body.colorId}" successfully purchased!` })
+    .json({ message: `Color "${body.colorId}" successfully purchased!` })
 }

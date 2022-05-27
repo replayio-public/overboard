@@ -16,9 +16,9 @@ export function PurchaseButton() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        width: '18rem',
-        gap: '0.8rem',
-        borderRadius: '2rem',
+        width: 'var(--space-6)',
+        gap: 'var(--space-1)',
+        borderRadius: 'var(--radii-tertiary)',
         position: 'relative',
         overflow: 'hidden',
       }}
@@ -38,8 +38,8 @@ export function PurchaseButton() {
           <span
             style={{
               position: 'absolute',
-              left: '-0.8rem',
-              fontSize: '1rem',
+              left: 'calc(var(--space-1) * -1)',
+              fontSize: 'var(--font-size-tertiary)',
               color: 'var(--foreground-secondary)',
             }}
           >

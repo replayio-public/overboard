@@ -1,8 +1,10 @@
 import dynamic from 'next/dynamic'
+import { Column } from './Column'
 
-import { Form } from './Form'
 import { BugIcon, RabbitIcon, WavesIcon } from './icons'
 import { Logo } from './Logo'
+import { PurchaseForm } from './PurchaseForm'
+import { Row } from './Row'
 
 const Hoverboard = dynamic(() => import('./Hoverboard'), { ssr: false })
 
@@ -15,7 +17,7 @@ export const colorStops: Record<string, [string, string]> = {
 export function Product() {
   return (
     <>
-      <div style={{ padding: '2rem 4rem' }}>
+      <div style={{ padding: 'var(--space-3) var(--space-4)' }}>
         <Logo height={32} />
       </div>
 
@@ -29,53 +31,38 @@ export function Product() {
           <Hoverboard />
         </div>
 
-        <div
+        <Column
+          gap={4}
           style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '4rem',
-            padding: '2rem',
+            padding: 'var(--space-3)',
             justifyContent: 'center',
           }}
         >
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '2rem',
-            }}
-          >
+          <Column gap={3}>
             <h1>BugSlayer</h1>
-            <ul
+            <Column
+              as="ul"
+              gap={3}
               style={{
-                display: 'flex',
-                flexDirection: 'column',
                 padding: 0,
-                gap: '2rem',
-                fontSize: '1.8rem',
+                fontSize: 'var(--font-size-secondary)',
                 listStyle: 'none',
               }}
             >
-              <li
-                style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}
-              >
+              <Row as="li" gap={2} style={{ alignItems: 'center' }}>
                 <BugIcon /> Bash 10x the bugs
-              </li>
-              <li
-                style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}
-              >
+              </Row>
+              <Row as="li" gap={2} style={{ alignItems: 'center' }}>
                 <RabbitIcon /> Ship critical fixes faster
-              </li>
-              <li
-                style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}
-              >
+              </Row>
+              <Row as="li" gap={2} style={{ alignItems: 'center' }}>
                 <WavesIcon /> Stay in flow state
-              </li>
-            </ul>
-          </div>
+              </Row>
+            </Column>
+          </Column>
 
-          <Form />
-        </div>
+          <PurchaseForm />
+        </Column>
       </div>
     </>
   )
