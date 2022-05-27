@@ -13,10 +13,18 @@ export default function Scene({ ...props }) {
     <>
       <color attach="background" args={['#5d3183']} />
       <group {...props} dispose={null}>
+        <mesh
+          name="Ellipse"
+          geometry={nodes.Ellipse.geometry}
+          material={materials['Ellipse Material']}
+          receiveShadow
+          position={[1.55, -73.46, -0.09]}
+          rotation={[-Math.PI / 2, 0, -Math.PI / 2]}
+        />
         <group
           name="Hoverboard"
-          position={[4.13, -0.09, 1.75]}
-          rotation={[-2.87, -0.29, 0.37]}
+          position={[10.83, -16.3, -4.33]}
+          rotation={[3.11, -0.12, 0.34]}
         >
           <group
             name="BoosterFrontLamp"
@@ -105,25 +113,26 @@ export default function Scene({ ...props }) {
         <directionalLight
           name="Directional Light"
           castShadow
-          intensity={1.1}
+          intensity={0.7}
           shadow-mapSize-width={1024}
           shadow-mapSize-height={1024}
           shadow-camera-near={1}
-          shadow-camera-far={2500}
-          shadow-camera-left={-1250}
-          shadow-camera-right={1250}
-          shadow-camera-top={1250}
-          shadow-camera-bottom={-1250}
-          color="#f9eefe"
-          position={[386.82, 427.41, 241.13]}
+          shadow-camera-far={2959.6}
+          shadow-camera-left={-5000}
+          shadow-camera-right={5000}
+          shadow-camera-top={5000}
+          shadow-camera-bottom={-5000}
+          color="#f8e8fe"
+          position={[102.33, 779.79, 273.43]}
         />
         <OrthographicCamera
           name="Personal Camera"
           makeDefault={true}
-          zoom={2.27}
+          zoom={2.52}
           far={100000}
           near={-100000}
-          position={[7.82, 1003.08, 15.74]}
+          up={[0, 1, 0]}
+          position={[-0.48, 1002.67, -2.62]}
           rotation={[-1.57, 0, 0]}
         />
         <hemisphereLight

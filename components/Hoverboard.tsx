@@ -10,9 +10,9 @@ export default function Hoverboard() {
   return router.query.three ? (
     <Canvas shadows flat linear>
       <Scene />
-      <OrbitControls />
+      {router.query.orbit && <OrbitControls />}
     </Canvas>
   ) : (
-    <img src="/board.png" />
+    <img src="/hoverboard.png" />
   )
 }
