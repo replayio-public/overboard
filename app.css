@@ -37,7 +37,7 @@ p {
 }
 
 button {
-  --foreground-primary: #fff;
+  --foreground: #fff;
   --foreground-secondary: #ffa5bf;
   --background: linear-gradient(
     180deg,
@@ -51,13 +51,13 @@ button {
     #e32245 72.44%,
     #411071 177.15%
   );
-  padding: 1rem 2rem;
-  border-radius: 0.4rem;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 600;
+  height: 4rem;
+  border-radius: 0.4rem;
   border: none;
-  color: var(--foreground-primary);
   background: var(--background);
+  color: var(--foreground);
   text-shadow: 0px 1.5533px 2.32995px #b01d64;
   cursor: pointer;
 }
@@ -92,11 +92,9 @@ button {
   background-image: linear-gradient(
     135deg,
     var(--stop-1) 0%,
-    var(--stop-1) 33.33%,
-    var(--stop-2) 33.33%,
-    var(--stop-2) 66.66%,
-    var(--stop-3) 66.66%,
-    var(--stop-3) 100%
+    var(--stop-1) 50%,
+    var(--stop-2) 50%,
+    var(--stop-2) 100%
   );
 }
 

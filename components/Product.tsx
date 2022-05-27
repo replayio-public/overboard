@@ -6,10 +6,10 @@ import { Logo } from './Logo'
 
 const Hoverboard = dynamic(() => import('./Hoverboard'), { ssr: false })
 
-export const colorStops: Record<string, [string, string, string]> = {
-  replay: ['#D35DF0', '#83345F', '#F94CE8'],
-  rasta: ['#F0E15D', '#83AD48', '#F94C77'],
-  ocean: ['#9DB5E4', '#F0C75D', '#F9804C'],
+export const colorStops: Record<string, [string, string]> = {
+  replay: ['#D35DF0', '#83345F'],
+  rasta: ['#F0E15D', '#F94C77'],
+  ocean: ['#9DB5E4', '#6277a1'],
 }
 
 export function Product() {

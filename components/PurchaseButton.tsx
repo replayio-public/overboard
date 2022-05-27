@@ -16,9 +16,9 @@ export function PurchaseButton() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        width: '18rem',
         gap: '0.8rem',
         borderRadius: '2rem',
-        width: '16rem',
         position: 'relative',
         overflow: 'hidden',
       }}
@@ -49,9 +49,9 @@ export function PurchaseButton() {
         </span>
         <span
           style={{
+            display: 'block',
             flexShrink: 0,
             flexBasis: 2,
-            height: '1.6rem',
             backgroundColor: 'var(--foreground-secondary)',
           }}
         />
