@@ -22,7 +22,7 @@ export function Color({
   label: string
   value: string
   defaultChecked?: boolean
-  stops: [string, string, string]
+  stops: [string, string]
   name?: string
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
 }) {
@@ -38,7 +38,6 @@ export function Color({
           {
             '--stop-1': stops[0],
             '--stop-2': stops[1],
-            '--stop-3': stops[2],
           } as any
         }
       />
