@@ -10,6 +10,7 @@ class Document extends NextDocument {
     return (
       <Html>
         <Head>
+          <meta name="og:image" content="og-image.png'" />
           <link href="https://fonts.gstatic.com" rel="preconnect" />
           <link
             href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap"
