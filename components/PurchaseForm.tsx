@@ -1,27 +1,29 @@
-import { useCallback } from 'react'
+import { useCallback } from "react";
 
-import { Colors, Color } from './Colors'
-import { Column } from './Column'
-import { colorStops } from './Product'
-import { PurchaseButton } from './PurchaseButton'
+import { Colors, Color } from "./Colors";
+import { Column } from "./Column";
+import { colorStops } from "./Product";
+import { PurchaseButton } from "./PurchaseButton";
 
 export function PurchaseForm() {
   const handleSubmit = useCallback(async (event) => {
-    event.preventDefault()
+    event.preventDefault();
 
-    const form = event.currentTarget
-    const data = new FormData(form)
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    const formData = Object.fromEntries(data.entries());
+    const body = JSON.stringify(formData);
     const response = await fetch(form.action, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(Object.fromEntries(data.entries())),
-    })
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: body,
+    });
 
     if (!response.ok) {
-      const errorMessage = await response.text()
-      throw new Error(errorMessage)
+      const errorMessage = await response.text();
+      throw new Error(errorMessage);
     }
-  }, [])
+  }, []);
 
   return (
     <Column
@@ -48,5 +50,5 @@ export function PurchaseForm() {
 
       <PurchaseButton />
     </Column>
-  )
+  );
 }
