@@ -10,13 +10,14 @@ export function Column<T extends ElementType = 'div'>({
   as,
   children,
   gap,
+  className,
   style,
   ...props
 }: ColumnProps<T> & ComponentPropsWithoutRef<T>) {
   const Element = as || 'div'
   return (
     <Element
-      className="Column"
+      className={['Column', className].filter(Boolean).join(' ')}
       style={{
         gap: `var(--space-${gap})`,
         ...style,

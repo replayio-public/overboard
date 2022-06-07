@@ -15,9 +15,23 @@
   --space-1: 0.8rem;
   --space-2: 1rem;
   --space-3: 2rem;
-  --space-4: 4rem;
+  --space-4: 3rem;
   --space-5: 5rem;
   --space-6: 18rem;
+
+  font-size: 60%;
+}
+
+@media (min-width: 600px) {
+  :root {
+    font-size: 80%;
+  }
+}
+
+@media (min-width: 1200px) {
+  :root {
+    font-size: 100%;
+  }
 }
 
 body {
@@ -67,13 +81,17 @@ button {
   );
   font-size: var(--font-size-secondary);
   font-weight: 600;
-  height: var(--space-4);
+  height: 4rem;
   border-radius: var(--radii-secondary);
   border: none;
   background: var(--background);
   color: var(--foreground);
   text-shadow: 0px 1.5533px 2.32995px #b01d64;
   cursor: pointer;
+}
+
+header {
+  padding: var(--space-3) var(--space-4);
 }
 
 .Column,
@@ -87,6 +105,35 @@ button {
 
 .Row {
   flex-direction: row;
+}
+
+.Product {
+  --main-space: minmax(1rem, 0.25fr);
+  --main-product: minmax(600px, 900px);
+  --main-details: 1fr;
+  display: grid;
+}
+
+.ProductDetails {
+  padding: var(--space-3);
+  justify-content: center;
+}
+
+@media (min-width: 600px) {
+  .Product {
+    grid-template-columns:
+      var(--main-space) var(--main-product) var(--main-details)
+      var(--main-space);
+    grid-template-rows: 1fr 0.1fr;
+  }
+
+  .ProductImage {
+    grid-column: 2;
+  }
+
+  .ProductDetails {
+    grid-column: 3;
+  }
 }
 
 .Colors {
