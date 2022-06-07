@@ -35,3 +35,5 @@ Optionally enable orbit controls for posing the model:
 ```
 ?three=true&orbit=true
 ```
+
+Finally, the source file for the model can be found [here](https://app.spline.design/file/02b12fab-ff5f-4b8b-b18a-5b8338ee1588).
