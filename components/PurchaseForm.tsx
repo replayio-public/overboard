@@ -1,4 +1,4 @@
-import { useCallback } from 'react'
+import { useCallback, useState } from 'react'
 
 import { Colors, Color } from './Colors'
 import { Column } from './Column'
@@ -11,6 +11,7 @@ export const colorStops: Record<string, [string, string]> = {
 }
 
 export function PurchaseForm() {
+  const [hasError, setHasError] = useState(false)
   const handleSubmit = useCallback(async (event) => {
     event.preventDefault()
 
@@ -26,6 +27,7 @@ export function PurchaseForm() {
 
     if (!response.ok) {
       const errorMessage = await response.text()
+      setHasError(true)
       throw new Error(errorMessage)
     }
   }, [])
@@ -54,7 +56,7 @@ export function PurchaseForm() {
         </Colors>
       </Column>
 
-      <PurchaseButton />
+      <PurchaseButton hasError={hasError} />
     </Column>
   )
 }

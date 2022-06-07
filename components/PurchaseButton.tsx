@@ -1,16 +1,12 @@
-import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 
-export function PurchaseButton() {
-  // TODO: move this state to onSubmit handler and pass back down
-  const [error, setError] = useState(false)
-
+export function PurchaseButton({ hasError }: { hasError?: boolean }) {
   return (
     <motion.button
-      onClick={() => setError(!error)}
-      whileTap={{ scale: 0.99 }}
+      disabled={hasError}
+      whileTap={{ scale: hasError ? undefined : 0.99 }}
       animate={{
-        background: error ? 'var(--background-error)' : 'var(--background)',
+        background: hasError ? 'var(--background-error)' : 'var(--background)',
       }}
       style={{
         display: 'flex',
@@ -21,14 +17,15 @@ export function PurchaseButton() {
         borderRadius: 'var(--radii-tertiary)',
         position: 'relative',
         overflow: 'hidden',
+        cursor: hasError ? 'not-allowed' : 'pointer',
       }}
     >
       <motion.div
         animate={{
           display: 'flex',
           gap: 'inherit',
-          opacity: error ? 0 : 1,
-          y: error ? -24 : 0,
+          opacity: hasError ? 0 : 1,
+          y: hasError ? -24 : 0,
         }}
         transition={{
           opacity: { duration: 0.2 },
@@ -59,8 +56,8 @@ export function PurchaseButton() {
 
       <motion.span
         animate={{
-          y: error ? -24 : 0,
-          opacity: error ? 0 : 1,
+          y: hasError ? -24 : 0,
+          opacity: hasError ? 0 : 1,
         }}
         transition={{
           opacity: { duration: 0.2 },
@@ -70,7 +67,7 @@ export function PurchaseButton() {
       </motion.span>
 
       <AnimatePresence>
-        {error && (
+        {hasError && (
           <motion.span
             style={{ position: 'absolute' }}
             initial={{ y: 24, scale: 1.05, opacity: 0 }}

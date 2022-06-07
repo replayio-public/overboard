@@ -108,7 +108,7 @@ header {
 }
 
 .Product {
-  --main-space: minmax(1rem, 0.25fr);
+  --main-space: minmax(4rem, 0.25fr);
   --main-product: minmax(600px, 900px);
   --main-details: 1fr;
   display: grid;
