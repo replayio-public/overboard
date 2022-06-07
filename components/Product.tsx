@@ -1,8 +1,9 @@
 import dynamic from 'next/dynamic'
+import Image from 'next/image'
+import { useRouter } from 'next/router'
+
 import { Column } from './Column'
-
 import { BugIcon, RabbitIcon, WavesIcon } from './icons'
-
 import { PurchaseForm } from './PurchaseForm'
 import { Row } from './Row'
 
@@ -15,10 +16,15 @@ export const colorStops: Record<string, [string, string]> = {
 }
 
 export function Product() {
+  const router = useRouter()
   return (
     <main className="Product">
       <div className="ProductImage">
-        <Hoverboard />
+        {router.query.three ? (
+          <Hoverboard />
+        ) : (
+          <Image src="/hoverboard.png" width={1268} height={1418} />
+        )}
       </div>
 
       <Column gap={4} className="ProductDetails">

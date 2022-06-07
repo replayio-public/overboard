@@ -7,12 +7,10 @@ import Scene from './Scene'
 export default function Hoverboard() {
   const router = useRouter()
 
-  return router.query.three ? (
+  return (
     <Canvas shadows flat linear>
       <Scene />
       {router.query.orbit && <OrbitControls />}
     </Canvas>
-  ) : (
-    <img src="/hoverboard.png" />
   )
 }
