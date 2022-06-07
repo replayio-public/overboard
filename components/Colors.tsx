@@ -16,13 +16,15 @@ export function Color({
   value,
   name,
   defaultChecked,
-  stops,
+  startColor,
+  endColor,
   onChange,
 }: {
   label: string
   value: string
+  startColor: string
+  endColor: string
   defaultChecked?: boolean
-  stops: [string, string]
   name?: string
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
 }) {
@@ -36,8 +38,8 @@ export function Color({
         onChange={onChange}
         style={
           {
-            '--stop-1': stops[0],
-            '--stop-2': stops[1],
+            '--stop-1': startColor,
+            '--stop-2': endColor,
           } as any
         }
       />

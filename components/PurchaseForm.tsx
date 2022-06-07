@@ -1,29 +1,34 @@
-import { useCallback } from "react";
+import { useCallback } from 'react'
 
-import { Colors, Color } from "./Colors";
-import { Column } from "./Column";
-import { colorStops } from "./Product";
-import { PurchaseButton } from "./PurchaseButton";
+import { Colors, Color } from './Colors'
+import { Column } from './Column'
+import { PurchaseButton } from './PurchaseButton'
+
+export const colorStops: Record<string, [string, string]> = {
+  Replay: ['#D35DF0', '#83345F'],
+  Rasta: ['#F0E15D', '#F94C77'],
+  Ocean: ['#9DB5E4', '#6277a1'],
+}
 
 export function PurchaseForm() {
   const handleSubmit = useCallback(async (event) => {
-    event.preventDefault();
+    event.preventDefault()
 
-    const form = event.currentTarget;
-    const data = new FormData(form);
-    const formData = Object.fromEntries(data.entries());
-    const body = JSON.stringify(formData);
+    const form = event.currentTarget
+    const data = new FormData(form)
+    const formData = Object.fromEntries(data.entries())
+    const body = JSON.stringify(formData)
     const response = await fetch(form.action, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: body,
-    });
+    })
 
     if (!response.ok) {
-      const errorMessage = await response.text();
-      throw new Error(errorMessage);
+      const errorMessage = await response.text()
+      throw new Error(errorMessage)
     }
-  }, []);
+  }, [])
 
   return (
     <Column
@@ -37,18 +42,19 @@ export function PurchaseForm() {
         <h2>Color</h2>
 
         <Colors>
-          <Color
-            label="Replay"
-            value="replay"
-            defaultChecked
-            stops={colorStops.replay}
-          />
-          <Color label="Rasta" value="rasta" stops={colorStops.rasta} />
-          <Color label="Ocean" value="ocean" stops={colorStops.ocean} />
+          {Object.entries(colorStops).map(([name, [start, end]]) => (
+            <Color
+              key={name}
+              label={name}
+              value={name.toLowerCase()}
+              startColor={start}
+              endColor={end}
+            />
+          ))}
         </Colors>
       </Column>
 
       <PurchaseButton />
     </Column>
-  );
+  )
 }
