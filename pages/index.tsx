@@ -1,4 +1,9 @@
-import { Column, Hoverboard, Logo, PurchaseForm } from 'components'
+import dynamic from 'next/dynamic'
+import { Column, Logo, PurchaseForm } from 'components'
+
+const Hoverboard = dynamic(() => import('components/Hoverboard'), {
+  ssr: false,
+})
 
 export default function Product() {
   return (
@@ -24,7 +29,9 @@ export default function Product() {
         </ul>
       </Column>
 
-      <Hoverboard width="30vw" height="20vh" />
+      <div style={{ width: '30vw', height: '20vh' }}>
+        <Hoverboard width="30vw" height="20vh" />
+      </div>
 
       <PurchaseForm />
     </main>
