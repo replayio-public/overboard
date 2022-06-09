@@ -4,6 +4,7 @@ import type { ReactNode } from 'react'
 export function Colors({ children }: { children: ReactNode }) {
   return (
     <div className="Colors">
+      <h3 className="screen-reader-only">Colors</h3>
       {Children.map(children, (child) =>
         isValidElement(child) ? cloneElement(child, { name: 'color' }) : child
       )}

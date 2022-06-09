@@ -1,58 +1,32 @@
-import dynamic from 'next/dynamic'
-import Image from 'next/image'
-import { useRouter } from 'next/router'
-
-import {
-  Column,
-  Row,
-  PurchaseForm,
-  BugIcon,
-  RabbitIcon,
-  WavesIcon,
-} from 'components'
-
-const Hoverboard = dynamic(() => import('components/Hoverboard'), {
-  ssr: false,
-})
+import { Column, Hoverboard, Logo, PurchaseForm } from 'components'
 
 export default function Product() {
-  const router = useRouter()
   return (
-    <main className="Product">
-      <div className="ProductImage">
-        {router.query.three ? (
-          <Hoverboard />
-        ) : (
-          <Image src="/hoverboard.png" width={1268} height={1418} />
-        )}
-      </div>
+    <main
+      style={{
+        display: 'grid',
+        placeItems: 'center',
+        gap: 'var(--space-4)',
+        backgroundColor: `linear-gradient(180deg, #1E076C 0%, #A312B5 55.73%, #FB6C8F 100%)`,
+      }}
+    >
+      <Column gap={1}>
+        <h1 className="screen-reader-only">Overboard</h1>
+        <h2 className="screen-reader-only">Bugslayer</h2>
+        <Logo />
 
-      <Column gap={4} className="ProductDetails">
-        <Column gap={4}>
-          <h1>BugSlayer</h1>
-          <Column
-            as="ul"
-            gap={3}
-            style={{
-              padding: 0,
-              fontSize: 'var(--font-size-secondary)',
-              listStyle: 'none',
-            }}
-          >
-            <Row as="li" gap={2} style={{ alignItems: 'center' }}>
-              <BugIcon /> Bash 10x the bugs
-            </Row>
-            <Row as="li" gap={2} style={{ alignItems: 'center' }}>
-              <RabbitIcon /> Ship critical fixes faster
-            </Row>
-            <Row as="li" gap={2} style={{ alignItems: 'center' }}>
-              <WavesIcon /> Stay in flow state
-            </Row>
-          </Column>
-        </Column>
-
-        <PurchaseForm />
+        <ul className="ProductFeatures">
+          <li>Bash 10x the bugs</li>
+          <li aria-hidden>·</li>
+          <li>Ship critical fixes faster</li>
+          <li aria-hidden>·</li>
+          <li>Stay in flow state</li>
+        </ul>
       </Column>
+
+      <Hoverboard width="30vw" height="20vh" />
+
+      <PurchaseForm />
     </main>
   )
 }

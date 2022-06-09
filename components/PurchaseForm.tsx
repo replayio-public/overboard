@@ -39,10 +39,9 @@ export function PurchaseForm() {
       method="post"
       onSubmit={handleSubmit}
       gap={5}
+      style={{ placeItems: 'center' }}
     >
       <Column gap={3}>
-        <h2>Color</h2>
-
         <Colors>
           {Object.entries(colorStops).map(([name, [start, end]]) => (
             <Color

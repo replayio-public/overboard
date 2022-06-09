@@ -6,54 +6,25 @@ export function PurchaseButton({ hasError }: { hasError?: boolean }) {
       disabled={hasError}
       whileTap={{ scale: hasError ? undefined : 0.99 }}
       animate={{
-        background: hasError ? 'var(--background-error)' : 'var(--background)',
+        backgroundColor: hasError
+          ? 'var(--background-error)'
+          : 'var(--background)',
+        color: hasError ? 'var(--foreground-error)' : 'var(--foreground)',
       }}
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: 'var(--space-6)',
-        gap: 'var(--space-1)',
-        borderRadius: 'var(--radii-tertiary)',
-        position: 'relative',
-        overflow: 'hidden',
-        cursor: hasError ? 'not-allowed' : 'pointer',
-      }}
+      style={
+        {
+          // display: 'flex',
+          // alignItems: 'center',
+          // justifyContent: 'center',
+          // width: 'var(--space-6)',
+          // gap: 'var(--space-1)',
+          // borderRadius: 'var(--radii-tertiary)',
+          // position: 'relative',
+          // overflow: 'hidden',
+          // cursor: hasError ? 'not-allowed' : 'pointer',
+        }
+      }
     >
-      <motion.div
-        animate={{
-          display: 'flex',
-          gap: 'inherit',
-          opacity: hasError ? 0 : 1,
-          y: hasError ? -24 : 0,
-        }}
-        transition={{
-          opacity: { duration: 0.2 },
-        }}
-      >
-        <span style={{ position: 'relative', fontWeight: 500 }}>
-          <span
-            style={{
-              position: 'absolute',
-              left: 'calc(var(--space-1) * -1)',
-              fontSize: 'var(--font-size-tertiary)',
-              color: 'var(--foreground-secondary)',
-            }}
-          >
-            $
-          </span>
-          419
-        </span>
-        <span
-          style={{
-            display: 'block',
-            flexShrink: 0,
-            flexBasis: 2,
-            backgroundColor: 'var(--foreground-secondary)',
-          }}
-        />
-      </motion.div>
-
       <motion.span
         animate={{
           y: hasError ? -24 : 0,
@@ -63,7 +34,7 @@ export function PurchaseButton({ hasError }: { hasError?: boolean }) {
           opacity: { duration: 0.2 },
         }}
       >
-        Buy Now
+        Add to cart
       </motion.span>
 
       <AnimatePresence>

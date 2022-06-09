@@ -3,6 +3,10 @@
   margin: 0;
 }
 
+[aria-hidden] {
+  user-select: none;
+}
+
 :root {
   --font-size-primary: 5rem;
   --font-size-secondary: 2rem;
@@ -35,10 +39,15 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  min-height: 100vh;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   letter-spacing: 0.025em;
+  background-image: url('./public/background.svg');
   background-color: #1c083a;
+  background-size: contain;
+  background-position: bottom center;
+  background-repeat: no-repeat;
   color: #fff;
 }
 
@@ -52,7 +61,6 @@ h1,
 h2 {
   font-family: 'Audiowide', sans-serif;
   letter-spacing: 0.05em;
-  animation: glow 4s forwards;
 }
 
 h1 {
@@ -65,33 +73,42 @@ p {
 }
 
 button {
-  --foreground: #fff;
-  --foreground-secondary: #ffa5bf;
-  --background: linear-gradient(
-    180deg,
-    #d65c80 -59.37%,
-    #e75a8d 72.44%,
-    #181659 177.15%
-  );
-  --background-error: linear-gradient(
-    180deg,
-    #e43f71 -59.37%,
-    #e32245 72.44%,
-    #411071 177.15%
-  );
-  font-size: var(--font-size-secondary);
+  --background: #fff;
+  --foreground: #000;
+  --background-error: #ed2051;
+  --foreground-error: #fff;
+  display: flex;
+  align-items: center;
+  min-height: 72px;
+  min-width: 320px;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  background-image: linear-gradient(to top bottom, #ffbdf4, #ffbdf400);
+  box-shadow: 0px 0px 16px rgba(255, 99, 228, 0.5),
+    0px 0px 15px rgba(255, 99, 228, 0.5), 0px 0px 5px rgba(255, 99, 228, 0.5);
+  border-radius: 112px;
   font-weight: 600;
-  height: 4rem;
-  border-radius: var(--radii-secondary);
-  border: none;
-  background: var(--background);
-  color: var(--foreground);
-  text-shadow: 0px 1.5533px 2.32995px #b01d64;
-  cursor: pointer;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
 }
 
 header {
   padding: var(--space-3) var(--space-4);
+}
+
+.screen-reader-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
 .Column,
@@ -107,33 +124,31 @@ header {
   flex-direction: row;
 }
 
-.Product {
-  --main-space: minmax(4rem, 0.25fr);
-  --main-product: minmax(600px, 900px);
-  --main-details: 1fr;
-  display: grid;
+.ProductFeatures {
+  place-self: center;
+  position: relative;
+  display: inline-flex;
+  padding: 0;
+  gap: 0.8rem;
+  list-style: none;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: #fff;
 }
 
-.ProductDetails {
-  padding: var(--space-3);
-  justify-content: center;
-}
-
-@media (min-width: 600px) {
-  .Product {
-    grid-template-columns:
-      var(--main-space) var(--main-product) var(--main-details)
-      var(--main-space);
-    grid-template-rows: 1fr 0.1fr;
-  }
-
-  .ProductImage {
-    grid-column: 2;
-  }
-
-  .ProductDetails {
-    grid-column: 3;
-  }
+.ProductFeatures:after {
+  position: absolute;
+  bottom: calc(var(--space-2) * -1);
+  width: 100%;
+  height: 1px;
+  margin-bottom: var(--space-2);
+  content: '';
+  display: block;
+  background-color: #fff;
 }
 
 .Colors {
@@ -174,28 +189,4 @@ header {
 
 .Color input:checked {
   transform: scale(0.8);
-}
-
-@keyframes glow {
-  0% {
-    text-shadow: 0 0 2px rgba(255, 255, 255, 0.8),
-      0 0 8px rgba(255, 255, 255, 0.8), 0 0 10px rgba(55, 255, 255, 0.8),
-      0 0 20px rgba(50, 100, 151, 0.5), 0 0 30px rgba(50, 100, 151, 0.5),
-      0 0 40px rgba(50, 100, 151, 0.5), 0 0 50px rgba(50, 100, 151, 0.5),
-      0 0 100px rgba(50, 100, 151, 0.5);
-  }
-  40% {
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
-      0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.8),
-      0 0 40px rgba(0, 100, 151, 0.8), 0 0 50px rgba(0, 100, 151, 0.8),
-      0 0 60px rgba(0, 100, 151, 0.5), 0 0 70px rgba(0, 100, 151, 0.5),
-      0 0 90px rgba(0, 100, 151, 0.5), 0 0 100px rgba(0, 100, 151, 0.5);
-  }
-  100% {
-    text-shadow: 0 0 2px rgba(255, 255, 255, 0.8),
-      0 0 8px rgba(255, 255, 255, 0.8), 0 0 10px rgba(55, 255, 255, 0.8),
-      0 0 20px rgba(50, 100, 151, 0.5), 0 0 30px rgba(50, 100, 151, 0.5),
-      0 0 40px rgba(50, 100, 151, 0.5), 0 0 50px rgba(50, 100, 151, 0.5),
-      0 0 100px rgba(50, 100, 151, 0.5);
-  }
 }
