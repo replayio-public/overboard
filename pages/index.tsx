@@ -11,6 +11,7 @@ export default function Product() {
       style={{
         display: 'grid',
         placeItems: 'center',
+        paddingBottom: 'var(--space-5)',
         gap: 'var(--space-4)',
         backgroundColor: `linear-gradient(180deg, #1E076C 0%, #A312B5 55.73%, #FB6C8F 100%)`,
       }}
@@ -29,8 +30,8 @@ export default function Product() {
         </ul>
       </Column>
 
-      <div style={{ width: '30vw', height: '20vh' }}>
-        <Hoverboard width="30vw" height="20vh" />
+      <div style={{ width: '30vw', height: '40vh' }}>
+        <Hoverboard />
       </div>
 
       <PurchaseForm />

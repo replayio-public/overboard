@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react'
 
 import animationData from '../public/hoverboard.json'
 
-export default function Hoverboard({ width, height }) {
+export default function Hoverboard() {
   const containerRef = useRef(null)
   const animation = useRef<AnimationItem>()
 
@@ -30,7 +30,7 @@ export default function Hoverboard({ width, height }) {
   return (
     <div
       ref={containerRef}
-      style={{ width, height }}
+      style={{ width: '100%', height: '100%' }}
       onClick={() => {
         if (animation.current?.isPaused) {
           animation.current?.play()
