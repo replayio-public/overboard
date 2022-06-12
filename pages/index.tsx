@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic'
 import { Column, Logo, PurchaseForm } from 'components'
-import AnimatedGrid from 'components/AnimatedGrid'
-import Stars from 'components/Stars'
+import { PlaceHolderWrapper } from 'components/Hoverboard'
+import Background from 'components/Background'
 
 const Hoverboard = dynamic(() => import('components/Hoverboard'), {
   ssr: false,
@@ -14,7 +14,7 @@ export default function Product() {
         display: 'grid',
         placeItems: 'center',
         paddingTop: 'var(--space-3)',
-        paddingBottom: 'var(--space-5)',
+        paddingBottom: 'var(--space-3)',
         gap: 'var(--space-3)'
       }}
     >
@@ -32,18 +32,13 @@ export default function Product() {
         </ul>
       </Column>
 
-      <div style={{ width: '25vw' }}>
-        <Hoverboard />
+      <div className="ProductAnimation">
+        <PlaceHolderWrapper>
+          <Hoverboard />
+        </PlaceHolderWrapper>
       </div>
 
-      <div style={{position: 'fixed', zIndex: -1, left: 0, width: '100%', bottom: 0, isolation: 'isolate'}}>
-        <div style={{position: 'fixed', top: 0, zIndex: 4, left: 0, width: '100%'}}>
-          <Stars />
-        </div>
-        <div style={{ position: 'fixed', inset: 0, background: `linear-gradient(180deg, #1E076C 0%, #A312B5 50%, transparent 100%)`, zIndex: 3 }} />
-        <AnimatedGrid />
-        <div style={{ position: 'fixed', inset: 0, background: `#FB6C8F`, zIndex: 1 }} />
-      </div>
+      <Background />
 
       <PurchaseForm />
     </main>

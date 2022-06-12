@@ -1,0 +1,16 @@
+.logo {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .logo {
+    width: 70vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  .logo {
+    width: 55vw;
+  }
+}

@@ -1,8 +1,10 @@
 import * as React from 'react'
 
+import s from './Logo.module.css'
+
 export const Logo = (props) => (
   <svg
-    style={{width: '55vw'}}
+    className={s['logo']}
     viewBox="0 0 1024 266"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
