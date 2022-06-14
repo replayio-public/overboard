@@ -1,12 +1,25 @@
 import { Children, cloneElement, isValidElement } from "react";
 import type { ReactNode } from "react";
 
-export function Colors({ children }: { children: ReactNode }) {
+export function Colors({
+  children,
+  onColorChange,
+}: {
+  children: ReactNode;
+  onColorChange: (color: string) => void;
+}) {
   return (
     <div className="Colors">
       <h3 className="screen-reader-only">Colors</h3>
       {Children.map(children, child =>
-        isValidElement(child) ? cloneElement(child, { name: "color" }) : child
+        isValidElement(child)
+          ? cloneElement(child, {
+              name: "color",
+              onChange: (event: React.ChangeEvent<HTMLInputElement>) => {
+                onColorChange(event.target.value);
+              },
+            })
+          : child
       )}
     </div>
   );

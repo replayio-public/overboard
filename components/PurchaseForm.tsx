@@ -5,12 +5,16 @@ import { Column } from "./Column";
 import { PurchaseButton } from "./PurchaseButton";
 
 export const colorStops: Record<string, [string, string]> = {
-  Replay: ["#D35DF0", "#83345F"],
-  Rasta: ["#F0E15D", "#F94C77"],
-  Ocean: ["#9DB5E4", "#6277a1"],
+  replay: ["#D35DF0", "#83345F"],
+  rasta: ["#F0E15D", "#F94C77"],
+  ghost: ["#9DB5E4", "#6277a1"],
 };
 
-export function PurchaseForm() {
+export function PurchaseForm({
+  onDataChange,
+}: {
+  onDataChange: (id: string, payload: any) => void;
+}) {
   const [hasError, setHasError] = useState(false);
   const handleSubmit = useCallback(async event => {
     event.preventDefault();
@@ -42,7 +46,7 @@ export function PurchaseForm() {
       style={{ placeItems: "center" }}
     >
       <Column gap={3}>
-        <Colors>
+        <Colors onColorChange={color => onDataChange("color", color)}>
           {Object.entries(colorStops).map(([name, [start, end]]) => (
             <Color
               key={name}

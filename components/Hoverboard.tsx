@@ -1,49 +1,96 @@
 import lottie, { AnimationItem } from "lottie-web";
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 
 import animationData from "../public/hoverboard.json";
 
-export default function Hoverboard() {
-  const containerRef = useRef(null);
-  const animation = useRef<AnimationItem>();
+export const colors = {
+  rasta: "normal",
+  replay: "luminosity",
+  ghost: "exclusion",
+} as const;
 
-  useEffect(() => {
+export type Color = keyof typeof colors;
+
+export default function Hoverboard({ color }: { color: Color }) {
+  const containerRef = useRef(null);
+  const previousColor = useRef(null);
+  const animation = useRef<AnimationItem>();
+  const timeoutId = useRef<ReturnType<typeof setTimeout>>(null);
+
+  function reset() {
+    clearTimeout(timeoutId.current);
+    animation.current.stop();
+    animation.current.setSpeed(1);
+  }
+
+  function flip() {
+    const speed = 2;
+    const duration = 1800 / speed;
+
+    reset();
+
+    animation.current.setSpeed(speed);
+    animation.current.goToAndPlay(91, true);
+
+    setTimeout(() => {
+      containerRef.current.style.mixBlendMode = colors[color];
+    }, duration / 2);
+
+    return new Promise<void>(resolve => {
+      timeoutId.current = setTimeout(() => {
+        reset();
+        resolve();
+      }, duration);
+    });
+  }
+
+  function wave() {
+    const duration = 900;
+
+    reset();
+
+    animation.current.play();
+
+    timeoutId.current = setTimeout(() => {
+      animation.current.stop();
+      animation.current.playDirection = -1;
+      animation.current.play();
+
+      timeoutId.current = setTimeout(() => {
+        animation.current.stop();
+        animation.current.playDirection = 1;
+        wave();
+      }, duration);
+    }, duration);
+  }
+
+  useLayoutEffect(() => {
     if (!containerRef.current) return;
 
-    let _animation: AnimationItem | undefined;
-
-    function play() {
-      animation.current.play();
-    }
-
-    animation.current = lottie.loadAnimation({
+    const _animation = lottie.loadAnimation({
       container: containerRef.current!,
       renderer: "svg",
       loop: true,
-      autoplay: true,
+      autoplay: false,
       animationData,
     });
 
-    play();
-
-    _animation = animation.current;
+    animation.current = _animation;
 
     return () => {
       _animation?.destroy();
     };
   }, []);
 
-  return (
-    <div
-      ref={containerRef}
-      style={{ width: "100%", height: "100%" }}
-      onClick={() => {
-        if (animation.current?.isPaused) {
-          animation.current?.play();
-        } else {
-          animation.current?.pause();
-        }
-      }}
-    />
-  );
+  useLayoutEffect(() => {
+    if (previousColor.current === null) {
+      wave();
+    } else if (previousColor.current !== color) {
+      flip().then(wave);
+    }
+
+    previousColor.current = color;
+  }, [color]);
+
+  return <div ref={containerRef} style={{ width: "100%", height: "100%" }} />;
 }

@@ -1,5 +1,7 @@
+import * as React from "react";
 import dynamic from "next/dynamic";
 import { Column, Logo, PurchaseForm } from "components";
+import type { Color } from "components/Hoverboard";
 import { PlaceHolderWrapper } from "components/PlaceHolderWrapper";
 import { Background } from "components/Background";
 
@@ -8,6 +10,16 @@ const Hoverboard = dynamic(() => import("components/Hoverboard"), {
 });
 
 export default function Product() {
+  const [formData, setFormData] = React.useState<{ color: Color }>({
+    color: "rasta",
+  });
+  const handleDataChange = (id, value) => {
+    setFormData(currentFormData => ({
+      ...currentFormData,
+      [id]: value,
+    }));
+  };
+
   return (
     <main
       style={{
@@ -34,13 +46,13 @@ export default function Product() {
 
       <div className="ProductAnimation">
         <PlaceHolderWrapper>
-          <Hoverboard />
+          <Hoverboard color={formData.color} />
         </PlaceHolderWrapper>
       </div>
 
       <Background />
 
-      <PurchaseForm />
+      <PurchaseForm onDataChange={handleDataChange} />
     </main>
   );
 }
