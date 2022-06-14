@@ -10,41 +10,41 @@ const Stars = () => {
       xmlns="http://www.w3.org/2000/svg"
     >
       <circle cx="203.486" cy="58.4997" r="1.80711" fill="white" />
-      <circle cx="150.477" cy="99.4608" r="1.80711" fill="white" fill-opacity="0.75" />
+      <circle cx="150.477" cy="99.4608" r="1.80711" fill="white" fillOpacity="0.75" />
       <circle cx="305.888" cy="21.1529" r="1.80711" fill="white" />
-      <circle cx="305.888" cy="21.1529" r="2.30711" stroke="white" stroke-opacity="0.1" />
+      <circle cx="305.888" cy="21.1529" r="2.30711" stroke="white" strokeOpacity="0.1" />
       <circle cx="192.643" cy="99.4608" r="1.80711" fill="white" />
-      <circle cx="192.643" cy="99.4608" r="2.30711" stroke="white" stroke-opacity="0.1" />
+      <circle cx="192.643" cy="99.4608" r="2.30711" stroke="white" strokeOpacity="0.1" />
       <circle cx="111.926" cy="156.083" r="1.80711" fill="white" />
       <circle cx="21.5703" cy="213.911" r="1.80711" fill="white" />
       <circle cx="445.638" cy="112.713" r="1.80711" fill="white" />
       <circle cx="11.9326" cy="-0.532371" r="1.80711" fill="white" />
-      <circle cx="11.9326" cy="-0.532371" r="2.30711" stroke="white" stroke-opacity="0.1" />
+      <circle cx="11.9326" cy="-0.532371" r="2.30711" stroke="white" strokeOpacity="0.1" />
       <circle cx="103.493" cy="59.7044" r="1.80711" fill="white" />
-      <circle cx="103.493" cy="59.7044" r="2.30711" stroke="white" stroke-opacity="0.1" />
+      <circle cx="103.493" cy="59.7044" r="2.30711" stroke="white" strokeOpacity="0.1" />
       <circle cx="262.518" cy="12.7197" r="1.80711" fill="white" />
-      <circle cx="262.518" cy="12.7197" r="2.30711" stroke="white" stroke-opacity="0.1" />
+      <circle cx="262.518" cy="12.7197" r="2.30711" stroke="white" strokeOpacity="0.1" />
       <circle cx="176.981" cy="192.226" r="1.80711" fill="white" />
       <circle cx="402.268" cy="104.28" r="1.80711" fill="white" />
       <circle cx="54.0981" cy="107.894" r="1.80711" fill="white" />
       <circle cx="251.675" cy="47.6571" r="1.80711" fill="white" />
       <circle cx="336.007" cy="27.1766" r="1.80711" fill="white" />
-      <circle cx="336.007" cy="27.1766" r="2.30711" stroke="white" stroke-opacity="0.1" />
+      <circle cx="336.007" cy="27.1766" r="2.30711" stroke="white" strokeOpacity="0.1" />
       <circle cx="25.1845" cy="159.698" r="1.80711" fill="white" />
-      <circle cx="25.1845" cy="159.698" r="2.30711" stroke="white" stroke-opacity="0.1" />
+      <circle cx="25.1845" cy="159.698" r="2.30711" stroke="white" strokeOpacity="0.1" />
       <circle cx="222.762" cy="105.484" r="1.80711" fill="white" />
-      <circle cx="222.762" cy="105.484" r="2.30711" stroke="white" stroke-opacity="0.1" />
-      <circle cx="186.619" cy="158.493" r="1.80711" fill="white" fill-opacity="0.6" />
-      <circle cx="186.619" cy="158.493" r="2.30711" stroke="white" stroke-opacity="0.1" />
+      <circle cx="222.762" cy="105.484" r="2.30711" stroke="white" strokeOpacity="0.1" />
+      <circle cx="186.619" cy="158.493" r="1.80711" fill="white" fillOpacity="0.6" />
+      <circle cx="186.619" cy="158.493" r="2.30711" stroke="white" strokeOpacity="0.1" />
       <circle cx="386.606" cy="85.004" r="1.80711" fill="white" />
-      <circle cx="386.606" cy="85.004" r="2.30711" stroke="white" stroke-opacity="0.1" />
+      <circle cx="386.606" cy="85.004" r="2.30711" stroke="white" strokeOpacity="0.1" />
       <circle cx="274.565" cy="52.4761" r="1.80711" fill="white" />
       <circle cx="376.968" cy="15.1291" r="1.80711" fill="white" />
       <circle cx="66.1455" cy="147.65" r="1.80711" fill="white" />
       <circle cx="263.723" cy="93.4371" r="1.80711" fill="white" />
       <circle cx="227.581" cy="146.446" r="1.80711" fill="white" />
       <circle cx="427.567" cy="72.9566" r="1.80711" fill="white" />
-      <circle cx="425.157" cy="21.1529" r="1.80711" fill="white" fill-opacity="0.2" />
+      <circle cx="425.157" cy="21.1529" r="1.80711" fill="white" fillOpacity="0.2" />
       <circle cx="310.707" cy="76.5708" r="1.80711" fill="white" />
       <circle cx="475.756" cy="78.9803" r="1.80711" fill="white" />
       <circle cx="133.611" cy="51.2713" r="1.80711" fill="white" />
@@ -71,26 +71,26 @@ const Stars = () => {
       <circle cx="249.265" cy="25.9719" r="0.602369" fill="white" />
       <circle cx="226.376" cy="53.6807" r="0.602369" fill="white" />
       <circle cx="343.838" cy="4.88894" r="1.20474" fill="white" />
-      <circle cx="343.838" cy="4.88894" r="1.70474" stroke="white" stroke-opacity="0.1" />
+      <circle cx="343.838" cy="4.88894" r="1.70474" stroke="white" strokeOpacity="0.1" />
       <circle cx="33.0153" cy="137.41" r="1.20474" fill="white" />
-      <circle cx="33.0153" cy="137.41" r="1.70474" stroke="white" stroke-opacity="0.1" />
+      <circle cx="33.0153" cy="137.41" r="1.70474" stroke="white" strokeOpacity="0.1" />
       <circle cx="230.592" cy="83.1969" r="1.20474" fill="white" />
-      <circle cx="230.592" cy="83.1969" r="1.70474" stroke="white" stroke-opacity="0.1" />
+      <circle cx="230.592" cy="83.1969" r="1.70474" stroke="white" strokeOpacity="0.1" />
       <circle cx="200.474" cy="18.141" r="1.20474" fill="white" />
       <circle cx="28.1964" cy="237.403" r="1.20474" fill="white" />
       <circle cx="452.264" cy="136.205" r="1.20474" fill="white" />
       <circle cx="406.484" cy="43.4406" r="1.20474" fill="white" />
       <circle cx="451.059" cy="7.29837" r="1.20474" fill="white" />
-      <circle cx="451.059" cy="7.29837" r="1.70474" stroke="white" stroke-opacity="0.1" />
+      <circle cx="451.059" cy="7.29837" r="1.70474" stroke="white" strokeOpacity="0.1" />
       <circle cx="336.609" cy="62.7163" r="1.20474" fill="white" />
-      <circle cx="336.609" cy="62.7163" r="1.70474" stroke="white" stroke-opacity="0.1" />
+      <circle cx="336.609" cy="62.7163" r="1.70474" stroke="white" strokeOpacity="0.1" />
       <circle cx="183.608" cy="63.921" r="1.20474" fill="white" />
       <circle cx="149.875" cy="139.819" r="1.20474" fill="white" />
       <circle cx="81.2047" cy="62.7163" r="1.20474" fill="white" />
       <circle cx="90.8429" cy="39.8263" r="1.20474" fill="white" />
       <circle cx="206.498" cy="200.056" r="1.20474" fill="white" />
       <circle cx="104.697" cy="9.10545" r="1.80711" fill="white" />
-      <circle cx="104.697" cy="9.10545" r="2.30711" stroke="white" stroke-opacity="0.1" />
+      <circle cx="104.697" cy="9.10545" r="2.30711" stroke="white" strokeOpacity="0.1" />
       <circle cx="4.70408" cy="87.4134" r="1.80711" fill="white" />
       <circle
         cx="183.005"
@@ -105,7 +105,7 @@ const Stars = () => {
         r="1.80711"
         transform="rotate(-180 236.014 251.258)"
         fill="white"
-        fill-opacity="0.75"
+        fillOpacity="0.75"
       />
       <circle
         cx="413.11"
@@ -113,7 +113,7 @@ const Stars = () => {
         r="1.80711"
         transform="rotate(-180 413.11 331.975)"
         fill="white"
-        fill-opacity="0.1"
+        fillOpacity="0.1"
       />
       <circle cx="436" cy="297.038" r="1.80711" transform="rotate(-180 436 297.038)" fill="white" />
       <circle
@@ -136,7 +136,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(-180 80.6026 329.566)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="391.425"
@@ -151,7 +151,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(-180 391.425 197.045)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="193.848"
@@ -166,7 +166,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(-180 193.848 251.258)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="540.812"
@@ -181,7 +181,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(-180 540.812 39.2239)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="192.643"
@@ -217,7 +217,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(-180 374.559 351.251)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="282.999"
@@ -232,7 +232,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(-180 282.999 291.014)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="525.151"
@@ -254,7 +254,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(-180 123.973 337.999)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="236.014"
@@ -262,7 +262,7 @@ const Stars = () => {
         r="1.80711"
         transform="rotate(-180 236.014 364.503)"
         fill="white"
-        fill-opacity="0.8"
+        fillOpacity="0.8"
       />
       <circle
         cx="209.509"
@@ -319,7 +319,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(-180 50.4839 323.542)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="361.306"
@@ -334,7 +334,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(-180 361.306 191.021)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="163.73"
@@ -349,7 +349,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(-180 163.73 245.234)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="510.694"
@@ -364,7 +364,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(-180 510.694 33.2002)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="199.872"
@@ -372,7 +372,7 @@ const Stars = () => {
         r="1.80711"
         transform="rotate(-180 199.872 192.226)"
         fill="white"
-        fill-opacity="0.6"
+        fillOpacity="0.6"
       />
       <circle
         cx="199.872"
@@ -380,7 +380,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(-180 199.872 192.226)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="-0.115212"
@@ -395,7 +395,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(-180 -0.115212 265.715)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="111.926"
@@ -613,7 +613,7 @@ const Stars = () => {
         r="1.70474"
         transform="rotate(-180 369.137 365.105)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="500.453"
@@ -628,7 +628,7 @@ const Stars = () => {
         r="1.70474"
         transform="rotate(-180 500.453 206.08)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="381.184"
@@ -825,7 +825,7 @@ const Stars = () => {
         r="1.70474"
         transform="rotate(-180 42.6532 345.83)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="353.475"
@@ -840,7 +840,7 @@ const Stars = () => {
         r="1.70474"
         transform="rotate(-180 353.475 213.309)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="155.899"
@@ -855,7 +855,7 @@ const Stars = () => {
         r="1.70474"
         transform="rotate(-180 155.899 267.522)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="502.863"
@@ -870,7 +870,7 @@ const Stars = () => {
         r="1.70474"
         transform="rotate(-180 502.863 55.4879)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="186.017"
@@ -913,7 +913,7 @@ const Stars = () => {
         r="1.70474"
         transform="rotate(-180 49.8817 288.002)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="395.641"
@@ -928,7 +928,7 @@ const Stars = () => {
         r="1.70474"
         transform="rotate(-180 395.641 53.0785)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="437.807"
@@ -1083,7 +1083,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(-180 281.793 341.613)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="499.851"
@@ -1112,7 +1112,7 @@ const Stars = () => {
         r="1.80711"
         transform="rotate(-180 1280.52 251.258)"
         fill="white"
-        fill-opacity="0.75"
+        fillOpacity="0.75"
       />
       <circle
         cx="1125.11"
@@ -1127,7 +1127,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(-180 1125.11 329.566)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="1435.93"
@@ -1142,7 +1142,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(-180 1435.93 197.044)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="1238.36"
@@ -1157,7 +1157,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(-180 1238.36 251.258)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="1237.15"
@@ -1200,7 +1200,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(-180 1419.07 351.251)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="1327.51"
@@ -1215,7 +1215,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(-180 1327.51 291.014)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="1168.48"
@@ -1230,7 +1230,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(-180 1168.48 337.999)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="1280.52"
@@ -1238,7 +1238,7 @@ const Stars = () => {
         r="1.80711"
         transform="rotate(-180 1280.52 364.503)"
         fill="white"
-        fill-opacity="0.8"
+        fillOpacity="0.8"
       />
       <circle
         cx="1254.02"
@@ -1288,7 +1288,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(-180 1094.99 323.542)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="1405.81"
@@ -1303,7 +1303,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(-180 1405.81 191.021)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="1208.24"
@@ -1318,7 +1318,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(-180 1208.24 245.234)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="1244.38"
@@ -1326,7 +1326,7 @@ const Stars = () => {
         r="1.80711"
         transform="rotate(-180 1244.38 192.225)"
         fill="white"
-        fill-opacity="0.6"
+        fillOpacity="0.6"
       />
       <circle
         cx="1244.38"
@@ -1334,7 +1334,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(-180 1244.38 192.225)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="1044.39"
@@ -1349,7 +1349,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(-180 1044.39 265.715)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="1156.43"
@@ -1399,7 +1399,7 @@ const Stars = () => {
         r="1.80711"
         transform="rotate(-180 1005.84 329.566)"
         fill="white"
-        fill-opacity="0.2"
+        fillOpacity="0.2"
       />
       <circle
         cx="1120.29"
@@ -1505,7 +1505,7 @@ const Stars = () => {
         r="1.70474"
         transform="rotate(-180 1413.64 365.105)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="1425.69"
@@ -1646,7 +1646,7 @@ const Stars = () => {
         r="1.70474"
         transform="rotate(-180 1087.16 345.83)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="1397.98"
@@ -1661,7 +1661,7 @@ const Stars = () => {
         r="1.70474"
         transform="rotate(-180 1397.98 213.308)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="1200.41"
@@ -1676,7 +1676,7 @@ const Stars = () => {
         r="1.70474"
         transform="rotate(-180 1200.41 267.522)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="1230.52"
@@ -1726,7 +1726,7 @@ const Stars = () => {
         r="1.70474"
         transform="rotate(-180 979.939 343.42)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="1094.39"
@@ -1741,7 +1741,7 @@ const Stars = () => {
         r="1.70474"
         transform="rotate(-180 1094.39 288.002)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="1440.15"
@@ -1756,7 +1756,7 @@ const Stars = () => {
         r="1.70474"
         transform="rotate(-180 1440.15 53.0783)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="1022.11"
@@ -1848,7 +1848,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(-180 1326.3 341.613)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="1426.29"
@@ -1858,43 +1858,43 @@ const Stars = () => {
         fill="white"
       />
       <circle cx="1247.99" cy="58.4996" r="1.80711" fill="white" />
-      <circle cx="1194.98" cy="99.4607" r="1.80711" fill="white" fill-opacity="0.75" />
-      <circle cx="1017.89" cy="18.7433" r="1.80711" fill="white" fill-opacity="0.1" />
+      <circle cx="1194.98" cy="99.4607" r="1.80711" fill="white" fillOpacity="0.75" />
+      <circle cx="1017.89" cy="18.7433" r="1.80711" fill="white" fillOpacity="0.1" />
       <circle cx="994.999" cy="53.6808" r="1.80711" fill="white" />
       <circle cx="933.557" cy="101.87" r="1.80711" fill="white" />
       <circle cx="1350.4" cy="21.1528" r="1.80711" fill="white" />
-      <circle cx="1350.4" cy="21.1528" r="2.30711" stroke="white" stroke-opacity="0.1" />
+      <circle cx="1350.4" cy="21.1528" r="2.30711" stroke="white" strokeOpacity="0.1" />
       <circle cx="1039.57" cy="153.674" r="1.80711" fill="white" />
-      <circle cx="1039.57" cy="153.674" r="2.30711" stroke="white" stroke-opacity="0.1" />
+      <circle cx="1039.57" cy="153.674" r="2.30711" stroke="white" strokeOpacity="0.1" />
       <circle cx="1237.15" cy="99.4607" r="1.80711" fill="white" />
-      <circle cx="1237.15" cy="99.4607" r="2.30711" stroke="white" stroke-opacity="0.1" />
+      <circle cx="1237.15" cy="99.4607" r="2.30711" stroke="white" strokeOpacity="0.1" />
       <circle cx="890.186" cy="311.495" r="1.80711" fill="white" />
-      <circle cx="890.186" cy="311.495" r="2.30711" stroke="white" stroke-opacity="0.1" />
+      <circle cx="890.186" cy="311.495" r="2.30711" stroke="white" strokeOpacity="0.1" />
       <circle cx="1156.43" cy="156.083" r="1.80711" fill="white" />
       <circle cx="1066.08" cy="213.911" r="1.80711" fill="white" />
       <circle cx="1056.44" cy="-0.532493" r="1.80711" fill="white" />
-      <circle cx="1056.44" cy="-0.532493" r="2.30711" stroke="white" stroke-opacity="0.1" />
+      <circle cx="1056.44" cy="-0.532493" r="2.30711" stroke="white" strokeOpacity="0.1" />
       <circle cx="1148" cy="59.7043" r="1.80711" fill="white" />
-      <circle cx="1148" cy="59.7043" r="2.30711" stroke="white" stroke-opacity="0.1" />
+      <circle cx="1148" cy="59.7043" r="2.30711" stroke="white" strokeOpacity="0.1" />
       <circle cx="1307.03" cy="12.7196" r="1.80711" fill="white" />
-      <circle cx="1307.03" cy="12.7196" r="2.30711" stroke="white" stroke-opacity="0.1" />
+      <circle cx="1307.03" cy="12.7196" r="2.30711" stroke="white" strokeOpacity="0.1" />
       <circle cx="1221.49" cy="192.226" r="1.80711" fill="white" />
       <circle cx="1022.71" cy="205.478" r="1.80711" fill="white" />
       <circle cx="1098.61" cy="107.894" r="1.80711" fill="white" />
       <circle cx="1296.18" cy="47.657" r="1.80711" fill="white" />
       <circle cx="979.337" cy="248.848" r="1.80711" fill="white" />
       <circle cx="1380.51" cy="27.1765" r="1.80711" fill="white" />
-      <circle cx="1380.51" cy="27.1765" r="2.30711" stroke="white" stroke-opacity="0.1" />
+      <circle cx="1380.51" cy="27.1765" r="2.30711" stroke="white" strokeOpacity="0.1" />
       <circle cx="1069.69" cy="159.698" r="1.80711" fill="white" />
-      <circle cx="1069.69" cy="159.698" r="2.30711" stroke="white" stroke-opacity="0.1" />
+      <circle cx="1069.69" cy="159.698" r="2.30711" stroke="white" strokeOpacity="0.1" />
       <circle cx="1267.27" cy="105.484" r="1.80711" fill="white" />
-      <circle cx="1267.27" cy="105.484" r="2.30711" stroke="white" stroke-opacity="0.1" />
+      <circle cx="1267.27" cy="105.484" r="2.30711" stroke="white" strokeOpacity="0.1" />
       <circle cx="920.305" cy="317.518" r="1.80711" fill="white" />
-      <circle cx="920.305" cy="317.518" r="2.30711" stroke="white" stroke-opacity="0.1" />
-      <circle cx="1231.13" cy="158.493" r="1.80711" fill="white" fill-opacity="0.6" />
-      <circle cx="1231.13" cy="158.493" r="2.30711" stroke="white" stroke-opacity="0.1" />
+      <circle cx="920.305" cy="317.518" r="2.30711" stroke="white" strokeOpacity="0.1" />
+      <circle cx="1231.13" cy="158.493" r="1.80711" fill="white" fillOpacity="0.6" />
+      <circle cx="1231.13" cy="158.493" r="2.30711" stroke="white" strokeOpacity="0.1" />
       <circle cx="1431.11" cy="85.0039" r="1.80711" fill="white" />
-      <circle cx="1431.11" cy="85.0039" r="2.30711" stroke="white" stroke-opacity="0.1" />
+      <circle cx="1431.11" cy="85.0039" r="2.30711" stroke="white" strokeOpacity="0.1" />
       <circle cx="1319.07" cy="52.4759" r="1.80711" fill="white" />
       <circle cx="1421.48" cy="15.1291" r="1.80711" fill="white" />
       <circle cx="1110.65" cy="147.65" r="1.80711" fill="white" />
@@ -1923,7 +1923,7 @@ const Stars = () => {
       <circle cx="842.599" cy="183.19" r="1.20474" fill="white" />
       <circle cx="958.254" cy="154.276" r="1.20474" fill="white" />
       <circle cx="930.545" cy="144.638" r="1.20474" fill="white" />
-      <circle cx="930.545" cy="144.638" r="1.70474" stroke="white" stroke-opacity="0.1" />
+      <circle cx="930.545" cy="144.638" r="1.70474" stroke="white" strokeOpacity="0.1" />
       <circle cx="1049.81" cy="57.8972" r="1.20474" fill="white" />
       <circle cx="1331.12" cy="10.3101" r="0.602369" fill="white" />
       <circle cx="982.951" cy="6.69587" r="0.602369" fill="white" />
@@ -1946,21 +1946,21 @@ const Stars = () => {
       <circle cx="1293.77" cy="25.9718" r="0.602369" fill="white" />
       <circle cx="1270.88" cy="53.6807" r="0.602369" fill="white" />
       <circle cx="1388.35" cy="4.88882" r="1.20474" fill="white" />
-      <circle cx="1388.35" cy="4.88882" r="1.70474" stroke="white" stroke-opacity="0.1" />
+      <circle cx="1388.35" cy="4.88882" r="1.70474" stroke="white" strokeOpacity="0.1" />
       <circle cx="1077.52" cy="137.41" r="1.20474" fill="white" />
-      <circle cx="1077.52" cy="137.41" r="1.70474" stroke="white" stroke-opacity="0.1" />
+      <circle cx="1077.52" cy="137.41" r="1.70474" stroke="white" strokeOpacity="0.1" />
       <circle cx="1275.1" cy="83.1968" r="1.20474" fill="white" />
-      <circle cx="1275.1" cy="83.1968" r="1.70474" stroke="white" stroke-opacity="0.1" />
+      <circle cx="1275.1" cy="83.1968" r="1.70474" stroke="white" strokeOpacity="0.1" />
       <circle cx="928.136" cy="295.231" r="1.20474" fill="white" />
-      <circle cx="928.136" cy="295.231" r="1.70474" stroke="white" stroke-opacity="0.1" />
+      <circle cx="928.136" cy="295.231" r="1.70474" stroke="white" strokeOpacity="0.1" />
       <circle cx="1244.98" cy="18.1409" r="1.20474" fill="white" />
       <circle cx="1072.7" cy="237.403" r="1.20474" fill="white" />
       <circle cx="1026.92" cy="275.955" r="1.20474" fill="white" />
       <circle cx="990.782" cy="333.782" r="1.20474" fill="white" />
       <circle cx="1381.12" cy="62.7162" r="1.20474" fill="white" />
-      <circle cx="1381.12" cy="62.7162" r="1.70474" stroke="white" stroke-opacity="0.1" />
+      <circle cx="1381.12" cy="62.7162" r="1.70474" stroke="white" strokeOpacity="0.1" />
       <circle cx="1035.36" cy="297.64" r="1.20474" fill="white" />
-      <circle cx="1035.36" cy="297.64" r="1.70474" stroke="white" stroke-opacity="0.1" />
+      <circle cx="1035.36" cy="297.64" r="1.70474" stroke="white" strokeOpacity="0.1" />
       <circle cx="993.192" cy="281.978" r="1.20474" fill="white" />
       <circle cx="1041.38" cy="269.931" r="1.20474" fill="white" />
       <circle cx="1030.54" cy="118.134" r="1.20474" fill="white" />
@@ -1978,7 +1978,7 @@ const Stars = () => {
       <circle cx="1251.01" cy="200.056" r="1.20474" fill="white" />
       <circle cx="981.144" cy="48.2594" r="1.20474" fill="white" />
       <circle cx="1149.2" cy="9.10545" r="1.80711" fill="white" />
-      <circle cx="1149.2" cy="9.10545" r="2.30711" stroke="white" stroke-opacity="0.1" />
+      <circle cx="1149.2" cy="9.10545" r="2.30711" stroke="white" strokeOpacity="0.1" />
       <circle cx="1049.21" cy="87.4133" r="1.80711" fill="white" />
       <circle
         cx="604.664"
@@ -1993,7 +1993,7 @@ const Stars = () => {
         r="1.80711"
         transform="rotate(-90 645.625 218.127)"
         fill="white"
-        fill-opacity="0.75"
+        fillOpacity="0.75"
       />
       <circle
         cx="564.907"
@@ -2001,7 +2001,7 @@ const Stars = () => {
         r="1.80711"
         transform="rotate(-90 564.907 395.223)"
         fill="white"
-        fill-opacity="0.1"
+        fillOpacity="0.1"
       />
       <circle
         cx="567.317"
@@ -2016,7 +2016,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(-90 567.317 62.7156)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="699.838"
@@ -2031,7 +2031,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(-90 699.838 373.538)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="645.625"
@@ -2046,7 +2046,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(-90 645.625 175.961)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="540.813"
@@ -2082,7 +2082,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(-90 545.632 356.672)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="605.869"
@@ -2097,7 +2097,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(-90 605.869 265.112)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="558.884"
@@ -2112,7 +2112,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(-90 558.884 106.086)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="532.38"
@@ -2120,7 +2120,7 @@ const Stars = () => {
         r="1.80711"
         transform="rotate(-90 532.38 218.127)"
         fill="white"
-        fill-opacity="0.8"
+        fillOpacity="0.8"
       />
       <circle
         cx="738.39"
@@ -2170,7 +2170,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(-90 573.341 32.5972)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="705.862"
@@ -2185,7 +2185,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(-90 705.862 343.42)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="651.649"
@@ -2200,7 +2200,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(-90 651.649 145.843)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="704.657"
@@ -2208,7 +2208,7 @@ const Stars = () => {
         r="1.80711"
         transform="rotate(-90 704.657 181.985)"
         fill="white"
-        fill-opacity="0.6"
+        fillOpacity="0.6"
       />
       <circle
         cx="704.657"
@@ -2216,7 +2216,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(-90 704.657 181.985)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="598.64"
@@ -2357,7 +2357,7 @@ const Stars = () => {
         r="1.70474"
         transform="rotate(-90 531.777 351.25)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="604.061"
@@ -2526,7 +2526,7 @@ const Stars = () => {
         r="1.70474"
         transform="rotate(-90 551.053 24.7665)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="683.574"
@@ -2541,7 +2541,7 @@ const Stars = () => {
         r="1.70474"
         transform="rotate(-90 683.574 335.589)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="629.361"
@@ -2556,7 +2556,7 @@ const Stars = () => {
         r="1.70474"
         transform="rotate(-90 629.361 138.012)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="564.305"
@@ -2592,7 +2592,7 @@ const Stars = () => {
         r="1.70474"
         transform="rotate(-90 608.88 31.9948)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="843.804"
@@ -2607,7 +2607,7 @@ const Stars = () => {
         r="1.70474"
         transform="rotate(-90 843.804 377.754)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="816.095"
@@ -2706,7 +2706,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(-90 555.27 263.907)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="633.578"
@@ -2728,7 +2728,7 @@ const Stars = () => {
         r="1.80711"
         transform="rotate(90 797.422 132.59)"
         fill="white"
-        fill-opacity="0.75"
+        fillOpacity="0.75"
       />
       <circle
         cx="875.73"
@@ -2743,7 +2743,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(90 875.73 288.002)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="797.422"
@@ -2758,7 +2758,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(90 797.422 174.756)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="902.234"
@@ -2794,7 +2794,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(90 837.178 85.6057)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="884.163"
@@ -2809,7 +2809,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(90 884.163 244.631)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="910.667"
@@ -2817,7 +2817,7 @@ const Stars = () => {
         r="1.80711"
         transform="rotate(90 910.667 132.59)"
         fill="white"
-        fill-opacity="0.8"
+        fillOpacity="0.8"
       />
       <circle
         cx="704.657"
@@ -2867,7 +2867,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(90 869.706 318.12)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="737.185"
@@ -2882,7 +2882,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(90 737.185 7.29771)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="791.398"
@@ -2897,7 +2897,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(90 791.398 204.875)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="738.39"
@@ -2905,7 +2905,7 @@ const Stars = () => {
         r="1.80711"
         transform="rotate(90 738.39 168.733)"
         fill="white"
-        fill-opacity="0.6"
+        fillOpacity="0.6"
       />
       <circle
         cx="738.39"
@@ -2913,7 +2913,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(90 738.39 168.733)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="811.879"
@@ -2928,7 +2928,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(90 811.879 368.719)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="844.407"
@@ -2971,7 +2971,7 @@ const Stars = () => {
         r="1.80711"
         transform="rotate(90 875.73 407.271)"
         fill="white"
-        fill-opacity="0.2"
+        fillOpacity="0.2"
       />
       <circle
         cx="820.312"
@@ -3070,7 +3070,7 @@ const Stars = () => {
         r="1.70474"
         transform="rotate(90 911.27 -0.533055)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="922.112"
@@ -3183,7 +3183,7 @@ const Stars = () => {
         r="1.70474"
         transform="rotate(90 891.994 325.951)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="759.473"
@@ -3198,7 +3198,7 @@ const Stars = () => {
         r="1.70474"
         transform="rotate(90 759.473 15.1286)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="813.686"
@@ -3213,7 +3213,7 @@ const Stars = () => {
         r="1.70474"
         transform="rotate(90 813.686 212.705)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="878.742"
@@ -3249,7 +3249,7 @@ const Stars = () => {
         r="1.70474"
         transform="rotate(90 834.166 318.722)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
       <circle
         cx="905.246"
@@ -3327,7 +3327,7 @@ const Stars = () => {
         r="2.30711"
         transform="rotate(90 887.777 86.8104)"
         stroke="white"
-        stroke-opacity="0.1"
+        strokeOpacity="0.1"
       />
     </svg>
   );

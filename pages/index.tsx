@@ -35,7 +35,6 @@ export default function Product() {
       <div className="ProductAnimation">
         <PlaceHolderWrapper>
           <Hoverboard />
-          <Hoverboard />
         </PlaceHolderWrapper>
       </div>
 
