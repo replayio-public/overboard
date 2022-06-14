@@ -42,14 +42,14 @@
   background-size: 45px 30px;
   background-repeat: repeat;
   transform-origin: 100% 0 0;
-  animation: play 15s linear infinite;
+  animation: play 2s linear infinite;
 }
 
 @keyframes play {
   0% {
-    transform: rotateX(45deg) translateY(-50%);
+    transform: rotateX(45deg) translateY(-15px);
   }
   100% {
-    transform: rotateX(45deg) translateY(0);
+    transform: rotateX(45deg) translateY(15px);
   }
 }
