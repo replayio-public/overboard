@@ -5,7 +5,7 @@
 .stars > circle {
   --delay: 0s;
   --duration: 5s;
-  
+
   opacity: 0;
   animation-name: blink;
   animation-timing-function: linear;

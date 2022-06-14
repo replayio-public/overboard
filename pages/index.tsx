@@ -1,21 +1,21 @@
-import dynamic from 'next/dynamic'
-import { Column, Logo, PurchaseForm } from 'components'
-import { PlaceHolderWrapper } from 'components/Hoverboard'
-import Background from 'components/Background'
+import dynamic from "next/dynamic";
+import { Column, Logo, PurchaseForm } from "components";
+import { PlaceHolderWrapper } from "components/PlaceHolderWrapper";
+import { Background } from "components/Background";
 
-const Hoverboard = dynamic(() => import('components/Hoverboard'), {
+const Hoverboard = dynamic(() => import("components/Hoverboard"), {
   ssr: false,
-})
+});
 
 export default function Product() {
   return (
     <main
       style={{
-        display: 'grid',
-        placeItems: 'center',
-        paddingTop: 'var(--space-3)',
-        paddingBottom: 'var(--space-3)',
-        gap: 'var(--space-3)'
+        display: "grid",
+        placeItems: "center",
+        paddingTop: "var(--space-3)",
+        paddingBottom: "var(--space-3)",
+        gap: "var(--space-3)",
       }}
     >
       <Column gap={1}>
@@ -35,6 +35,7 @@ export default function Product() {
       <div className="ProductAnimation">
         <PlaceHolderWrapper>
           <Hoverboard />
+          <Hoverboard />
         </PlaceHolderWrapper>
       </div>
 
@@ -42,5 +43,5 @@ export default function Product() {
 
       <PurchaseForm />
     </main>
-  )
+  );
 }

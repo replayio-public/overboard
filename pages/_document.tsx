@@ -1,10 +1,10 @@
-import NextDocument, { Html, Head, Main, NextScript } from 'next/document'
-import { Header } from 'components'
+import NextDocument, { Html, Head, Main, NextScript } from "next/document";
+import { Header } from "components";
 
 class Document extends NextDocument {
   static async getInitialProps(ctx) {
-    const initialProps = await NextDocument.getInitialProps(ctx)
-    return { ...initialProps }
+    const initialProps = await NextDocument.getInitialProps(ctx);
+    return { ...initialProps };
   }
 
   render() {
@@ -23,8 +23,8 @@ class Document extends NextDocument {
           <NextScript />
         </body>
       </Html>
-    )
+    );
   }
 }
 
-export default Document
+export default Document;

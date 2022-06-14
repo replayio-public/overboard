@@ -1,12 +1,12 @@
-import type { ComponentPropsWithoutRef, ElementType, ReactNode } from 'react'
+import type { ComponentPropsWithoutRef, ElementType, ReactNode } from "react";
 
 type ColumnProps<T extends ElementType> = {
-  as?: T
-  children: ReactNode
-  gap?: number
-}
+  as?: T;
+  children: ReactNode;
+  gap?: number;
+};
 
-export function Column<T extends ElementType = 'div'>({
+export function Column<T extends ElementType = "div">({
   as,
   children,
   gap,
@@ -14,10 +14,10 @@ export function Column<T extends ElementType = 'div'>({
   style,
   ...props
 }: ColumnProps<T> & ComponentPropsWithoutRef<T>) {
-  const Element = as || 'div'
+  const Element = as || "div";
   return (
     <Element
-      className={['Column', className].filter(Boolean).join(' ')}
+      className={["Column", className].filter(Boolean).join(" ")}
       style={{
         gap: `var(--space-${gap})`,
         ...style,
@@ -26,5 +26,5 @@ export function Column<T extends ElementType = 'div'>({
     >
       {children}
     </Element>
-  )
+  );
 }

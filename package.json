@@ -6,11 +6,12 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "screenshot": "node scripts/screenshot.mjs"
+    "screenshot": "node scripts/screenshot.mjs",
+    "format": "prettier '**/*' --write --ignore-unknown"
   },
   "dependencies": {
     "@babel/plugin-transform-react-display-name": "^7.16.7",
-    "@types/node": "^17.0.41",
+    "@types/node": "^17.0.42",
     "@types/react": "^18.0.12",
     "@types/react-dom": "^18.0.5",
     "@types/three": "^0.141.0",
@@ -18,6 +19,7 @@
     "lottie-web": "^5.9.4",
     "next": "^12.1.6",
     "playwright": "^1.22.2",
+    "prettier": "^2.7.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "typescript": "^4.7.3",

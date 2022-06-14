@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion } from "framer-motion";
 
 export function PurchaseButton({ hasError }: { hasError?: boolean }) {
   return (
@@ -6,10 +6,8 @@ export function PurchaseButton({ hasError }: { hasError?: boolean }) {
       disabled={hasError}
       whileTap={{ scale: hasError ? undefined : 0.99 }}
       animate={{
-        backgroundColor: hasError
-          ? 'var(--background-error)'
-          : 'var(--background)',
-        color: hasError ? 'var(--foreground-error)' : 'var(--foreground)',
+        backgroundColor: hasError ? "var(--background-error)" : "var(--background)",
+        color: hasError ? "var(--foreground-error)" : "var(--foreground)",
       }}
       style={
         {
@@ -40,7 +38,7 @@ export function PurchaseButton({ hasError }: { hasError?: boolean }) {
       <AnimatePresence>
         {hasError && (
           <motion.span
-            style={{ position: 'absolute' }}
+            style={{ position: "absolute" }}
             initial={{ y: 24, scale: 1.05, opacity: 0 }}
             animate={{ y: 0, scale: 1, opacity: 1 }}
             exit={{ y: 24, scale: 0.99, opacity: 0 }}
@@ -51,5 +49,5 @@ export function PurchaseButton({ hasError }: { hasError?: boolean }) {
         )}
       </AnimatePresence>
     </motion.button>
-  )
+  );
 }
