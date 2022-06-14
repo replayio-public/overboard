@@ -19,7 +19,6 @@ class Document extends NextDocument {
           />
         </Head>
         <body>
-          <Header />
           <Main />
           <NextScript />
         </body>

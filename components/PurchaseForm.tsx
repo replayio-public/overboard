@@ -38,7 +38,7 @@ export function PurchaseForm() {
       action="/api/purchase"
       method="post"
       onSubmit={handleSubmit}
-      gap={5}
+      gap={4}
       style={{ placeItems: 'center' }}
     >
       <Column gap={3}>
