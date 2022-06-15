@@ -1,14 +1,8 @@
 import { useCallback, useState } from "react";
 
-import { Colors, Color } from "./Colors";
+import { Colors, Color, colorStops } from "./Colors";
 import { Column } from "./Column";
 import { PurchaseButton } from "./PurchaseButton";
-
-export const colorStops: Record<string, [string, string]> = {
-  replay: ["#D35DF0", "#83345F"],
-  rasta: ["#F0E15D", "#F94C77"],
-  ghost: ["#9DB5E4", "#6277a1"],
-};
 
 export function PurchaseForm({
   onDataChange,

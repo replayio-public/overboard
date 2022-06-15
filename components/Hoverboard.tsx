@@ -2,16 +2,10 @@ import lottie, { AnimationItem } from "lottie-web";
 import { useLayoutEffect, useRef } from "react";
 
 import animationData from "../public/hoverboard.json";
+import type { Colorway } from "./Colors";
+import { colorways } from "./Colors";
 
-export const colors = {
-  rasta: "normal",
-  replay: "luminosity",
-  ghost: "exclusion",
-} as const;
-
-export type Color = keyof typeof colors;
-
-export default function Hoverboard({ color }: { color: Color }) {
+export default function Hoverboard({ color }: { color: Colorway }) {
   const containerRef = useRef(null);
   const previousColor = useRef(null);
   const animation = useRef<AnimationItem>();
@@ -33,7 +27,7 @@ export default function Hoverboard({ color }: { color: Color }) {
     animation.current.goToAndPlay(91, true);
 
     setTimeout(() => {
-      containerRef.current.style.mixBlendMode = colors[color];
+      containerRef.current.style.mixBlendMode = colorways[color];
     }, duration / 2);
 
     return new Promise<void>(resolve => {

@@ -1,6 +1,20 @@
 import { Children, cloneElement, isValidElement } from "react";
 import type { ReactNode } from "react";
 
+export const colorways = {
+  rasta: "normal",
+  replay: "luminosity",
+  ghost: "exclusion",
+};
+
+export type Colorway = keyof typeof colorways;
+
+export const colorStops: Record<Colorway, [string, string]> = {
+  replay: ["#D35DF0", "#83345F"],
+  rasta: ["#F0E15D", "#F94C77"],
+  ghost: ["#9DB5E4", "#6277a1"],
+};
+
 export function Colors({
   children,
   onColorChange,

@@ -1,7 +1,7 @@
 import * as React from "react";
 import dynamic from "next/dynamic";
 import { Column, Logo, PurchaseForm } from "components";
-import type { Color } from "components/Hoverboard";
+import type { Colorway } from "components/Colors";
 import { PlaceHolderWrapper } from "components/PlaceHolderWrapper";
 import { Background } from "components/Background";
 
@@ -10,7 +10,7 @@ const Hoverboard = dynamic(() => import("components/Hoverboard"), {
 });
 
 export default function Product() {
-  const [formData, setFormData] = React.useState<{ color: Color }>({
+  const [formData, setFormData] = React.useState<{ color: Colorway }>({
     color: "rasta",
   });
   const handleDataChange = (id, value) => {
