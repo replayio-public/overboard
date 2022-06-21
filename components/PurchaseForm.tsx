@@ -10,7 +10,7 @@ export function PurchaseForm({
   onDataChange: (id: string, payload: any) => void;
 }) {
   const [hasError, setHasError] = useState(false);
-  const handleSubmit = useCallback(async event => {
+  const handleSubmit = useCallback(async function handleSubmit(event) {
     event.preventDefault();
 
     const form = event.currentTarget;
