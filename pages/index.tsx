@@ -11,7 +11,7 @@ const Hoverboard = dynamic(() => import("components/Hoverboard"), {
 
 export default function Product() {
   const [formData, setFormData] = React.useState<{ color: Colorway }>({
-    color: "rasta",
+    color: "red",
   });
   const handleDataChange = (id, value) => {
     setFormData(currentFormData => ({

@@ -1,67 +1,43 @@
 import lottie, { AnimationItem } from "lottie-web";
-import { useLayoutEffect, useRef } from "react";
+import { interpolate } from "@popmotion/popcorn";
+import { useEffect, useRef } from "react";
 
 import animationData from "../public/hoverboard.json";
+import animationDataFlip from "../public/hoverboard-flip.json";
+import animationDataWave from "../public/hoverboard-wave.json";
 import type { Colorway } from "./Colors";
 import { colorways } from "./Colors";
 
-export default function Hoverboard({ color }: { color: Colorway }) {
+export default function Hoverboard({
+  color = "red",
+  rotate,
+}: {
+  color?: Colorway;
+  rotate: number;
+}) {
   const containerRef = useRef(null);
   const previousColor = useRef(null);
-  const animation = useRef<AnimationItem>();
+  const animationRef = useRef<AnimationItem>();
   const timeoutId = useRef<ReturnType<typeof setTimeout>>(null);
 
   function reset() {
     clearTimeout(timeoutId.current);
-    animation.current.stop();
-    animation.current.setSpeed(1);
-  }
-
-  function flip() {
-    const speed = 2;
-    const duration = 1800 / speed;
-
-    reset();
-
-    animation.current.setSpeed(speed);
-    animation.current.goToAndPlay(91, true);
-
-    setTimeout(() => {
-      containerRef.current.style.mixBlendMode = colorways[color];
-    }, duration / 2);
-
-    return new Promise<void>(resolve => {
-      timeoutId.current = setTimeout(() => {
-        reset();
-        resolve();
-      }, duration);
-    });
+    animationRef.current.stop();
+    animationRef.current.setSpeed(1);
   }
 
   function wave() {
-    const duration = 900;
-
-    reset();
-
-    animation.current.play();
-
-    timeoutId.current = setTimeout(() => {
-      animation.current.stop();
-      animation.current.playDirection = -1;
-      animation.current.play();
-
-      timeoutId.current = setTimeout(() => {
-        animation.current.stop();
-        animation.current.playDirection = 1;
-        wave();
-      }, duration);
-    }, duration);
+    animationRef.current.playSegments([0, 24]);
   }
 
-  useLayoutEffect(() => {
+  function flip() {
+    animationRef.current.playSegments([24, animationRef.current.totalFrames], true);
+  }
+
+  useEffect(() => {
     if (!containerRef.current) return;
 
-    const _animation = lottie.loadAnimation({
+    const animation = lottie.loadAnimation({
       container: containerRef.current!,
       renderer: "svg",
       loop: true,
@@ -69,22 +45,36 @@ export default function Hoverboard({ color }: { color: Colorway }) {
       animationData,
     });
 
-    animation.current = _animation;
+    animationRef.current = animation;
 
     return () => {
-      _animation?.destroy();
+      animation?.destroy();
     };
   }, []);
 
-  useLayoutEffect(() => {
-    if (previousColor.current === null) {
-      wave();
-    } else if (previousColor.current !== color) {
-      flip().then(wave);
-    }
+  useEffect(() => {
+    /** Offsets the start frame to keep rotate={180} true to flipping the board 180 degrees in the Lottie animation. */
+    const startOffset = 35;
+    const nextFrame = Math.floor(
+      interpolate(
+        [-startOffset, 360 - startOffset],
+        [24, animationRef.current.totalFrames]
+      )(rotate - startOffset) as number
+    );
 
-    previousColor.current = color;
-  }, [color]);
+    animationRef.current?.goToAndStop(nextFrame, true);
+  }, [rotate]);
+
+  // useLayoutEffect(() => {
+  //   if (previousColor.current === null) {
+  //     wave();
+  //   } else if (previousColor.current !== color) {
+  //     flip();
+  //     // flip().then(wave);
+  //   }
+
+  //   previousColor.current = color;
+  // }, [color]);
 
   return <div ref={containerRef} style={{ width: "100%", height: "100%" }} />;
 }
