@@ -5,7 +5,7 @@ import type { Colorway } from "components/Colors";
 import { PlaceHolderWrapper } from "components/PlaceHolderWrapper";
 import { Background } from "components/Background";
 
-const Hoverboard = dynamic(() => import("components/Hoverboard"), {
+const Hoverboard = dynamic(async () => (await import("@replayio/hoverboard")).Hoverboard, {
   ssr: false,
 });
 

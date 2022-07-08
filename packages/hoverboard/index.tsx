@@ -6,7 +6,7 @@ import animationData from "./hoverboard.json";
 
 type Colorway = any;
 
-export function Hoverboard({ color, rotate }: { color?: Colorway; rotate: number }) {
+export function Hoverboard({ color, rotate }: { color?: Colorway; rotate?: number }) {
   const containerRef = useRef(null);
   const previousColor = useRef(null);
   const animationRef = useRef<AnimationItem>();
