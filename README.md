@@ -1,39 +1,31 @@
 # Overboard (⚠️ wip)
 
-Welcome to Overboard, the ficticious online store that has a few bugs that need your help fixing! This site is a showcase of various bugs in a simplified React application to help demonstrate how Replay helps you debug your application.
+Welcome to Overboard, the ficticious online store that has a few bugs that need your help fixing! This site is a showcase of various bugs in a simplified React application to help demonstrate how Replay helps you debug code execution across time.
 
 ## Development
 
-```
-npm install
-```
+This is a monorepo powered by Yarn workspaces. The following workspaces are available, located in the [packages](/packages) directory:
 
-This site uses NextJS, which is a framework for building server-side rendered React applications. To start the server, run the following command in your terminal:
+- [hoverboard](/packages/hoverboard/)
 
-```
-npm run dev
-```
+  The official hoverboard of Replay that comes in a variety of colors.
 
-### Screenshots
+- [site](/packages/site/)
 
-While the local server is running you can generate screenshots of the site by running the following:
+  The NextJS site that powers our fictional online store.
 
 ```
-npm run screenshot
+yarn install
 ```
 
-### Hoverboard Model
-
-To view the hoverboard model, append the following query string to the URL:
+To start all of the dev servers, run the following in your terminal:
 
 ```
-?three=true
+yarn dev
 ```
 
-Optionally enable orbit controls for posing the model:
+To filter which packages to run you can use the filter flag:
 
 ```
-?three=true&orbit=true
+yarn dev --filter hoverboard
 ```
-
-Finally, the source file for the model can be found [here](https://app.spline.design/file/02b12fab-ff5f-4b8b-b18a-5b8338ee1588).
