@@ -2,18 +2,15 @@ import lottie, { AnimationItem } from "lottie-web";
 import { interpolate } from "@popmotion/popcorn";
 import { useEffect, useRef } from "react";
 
-import animationData from "../public/hoverboard.json";
-import animationDataFlip from "../public/hoverboard-flip.json";
-import animationDataWave from "../public/hoverboard-wave.json";
+import animationData from "../public/hoverboard-flip.json";
 import type { Colorway } from "./Colors";
-import { colorways } from "./Colors";
 
 export default function Hoverboard({
   color = "red",
-  rotate,
+  rotate = 0,
 }: {
   color?: Colorway;
-  rotate: number;
+  rotate?: number;
 }) {
   const containerRef = useRef(null);
   const previousColor = useRef(null);

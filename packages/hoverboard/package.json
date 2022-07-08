@@ -1,0 +1,38 @@
+{
+  "name": "@replayio/hoverboard",
+  "version": "0.0.0",
+  "description": "The offical hoverboard component for Replay.io",
+  "main": "dist/index.js",
+  "module": "dist/esm/index.js",
+  "typings": "dist/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepublishOnly": "yarn build",
+    "build": "tsup index.tsx --dts --format esm,cjs --legacy-output",
+    "dev": "yarn build --watch --sourcemap"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Replayio/overboard"
+  },
+  "author": "Travis Arnold <travis@replay.com> (http://replay.io)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Replayio/overboard/issues"
+  },
+  "homepage": "https://github.com/Replayio/overboard",
+  "peerDependencies": {
+    "react": ">0.16.0",
+    "react-dom": ">0.16.0"
+  },
+  "devDependencies": {
+    "react": "*"
+  },
+  "dependencies": {
+    "@popmotion/popcorn": "^0.4.4",
+    "lottie-web": "^5.9.6"
+  }
+}

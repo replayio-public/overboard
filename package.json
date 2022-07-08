@@ -1,31 +1,23 @@
 {
-  "name": "store",
-  "version": "0.0.0",
-  "main": "index.js",
-  "license": "MIT",
+  "name": "overboard",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "screenshot": "node scripts/screenshot.mjs",
+    "build": "turbo run build",
+    "dev": "turbo run dev",
     "format": "prettier '**/*' --write --ignore-unknown"
   },
-  "dependencies": {
-    "@babel/plugin-transform-react-display-name": "^7.18.6",
-    "@popmotion/popcorn": "^0.4.4",
-    "@types/node": "^18.0.0",
-    "@types/react": "^18.0.14",
-    "@types/react-dom": "^18.0.5",
-    "@types/three": "^0.141.0",
-    "framer-motion": "^6.3.16",
-    "framesync": "^6.1.0",
-    "lottie-web": "^5.9.5",
-    "next": "^12.2.0",
-    "playwright": "^1.23.0",
+  "devDependencies": {
+    "@types/node": "^18.0.3",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
     "prettier": "^2.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "typescript": "^4.7.4",
-    "use-frame": "^0.1.1",
-    "webpack-react-component-name": "^5.0.4"
+    "tsup": "^6.1.3",
+    "turbo": "1.3.1",
+    "typescript": "^4.7.4"
   }
 }
