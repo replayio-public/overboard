@@ -7,18 +7,32 @@ import animationData from "./hoverboard.json";
 type Colorway = any;
 
 type HoverboardControls = {
-  reset: () => void;
-  wave: () => void;
+  /** Continuously flips the hoverboard in a full 360 degree rotation. */
   flip: () => void;
+
+  /** Reset the hoverboard animation to its original animation of both flipping and waving. */
+  reset: () => void;
+
+  /** Continuously animates the hoverboard up and down on a sine wave. */
+  wave: () => void;
 };
 
 type HoverboardProps = {
+  /**
+   * Sets the colorway of the hoverboard. Transitions between colors will play
+   * the flip animation once and then back to its previous animation.
+   */
   color?: Colorway;
+
+  /**
+   * Explicitly controls the rotation of the hoverboard. Obtain a ref to the `Hoverboard`
+   * component and use the `rotate` method when frequent rotation updates are required.
+   */
   rotate?: number;
 };
 
 export const Hoverboard = forwardRef<HoverboardControls, HoverboardProps>(function Hoverboard(
-  { color, rotate = 0 },
+  { color, rotate: rotateProp = null },
   ref
 ) {
   const containerRef = useRef(null);
@@ -34,13 +48,25 @@ export const Hoverboard = forwardRef<HoverboardControls, HoverboardProps>(functi
     animationRef.current!.setSpeed(1);
   }
 
+  function flip() {
+    animationRef.current!.playSegments([24, animationRef.current!.totalFrames], true);
+  }
+
   function wave() {
     animationRef.current!.playSegments([0, 24]);
   }
 
-  function flip() {
-    animationRef.current!.playSegments([24, animationRef.current!.totalFrames], true);
+  function rotate(amount: number) {
+    const interpolateFrameFromRotation = interpolate(
+      [0, 360],
+      [24, animationRef.current!.totalFrames]
+    );
+    const nextFrame = Math.floor(interpolateFrameFromRotation(amount) as number);
+
+    animationRef.current?.goToAndStop(nextFrame, true);
   }
+
+  useImperativeHandle(ref, () => ({ reset, flip, wave }));
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -60,31 +86,21 @@ export const Hoverboard = forwardRef<HoverboardControls, HoverboardProps>(functi
     };
   }, []);
 
-  useImperativeHandle(ref, () => ({ reset, wave, flip }));
+  useEffect(() => {
+    if (previousColor.current !== color) {
+      flip();
+    }
 
-  // useEffect(() => {
-  //   /** Offsets the start frame to keep rotate={180} true to flipping the board 180 degrees in the Lottie animation. */
-  //   const startOffset = 35;
-  //   const nextFrame = Math.floor(
-  //     interpolate(
-  //       [-startOffset, 360 - startOffset],
-  //       [24, animationRef.current!.totalFrames]
-  //     )(rotate - startOffset) as number
-  //   );
+    previousColor.current = color;
+  }, [color]);
 
-  //   animationRef.current?.goToAndStop(nextFrame, true);
-  // }, [rotate]);
+  useEffect(() => {
+    if (rotateProp === null) {
+      return;
+    }
 
-  // useLayoutEffect(() => {
-  //   if (previousColor.current === null) {
-  //     wave();
-  //   } else if (previousColor.current !== color) {
-  //     flip();
-  //     // flip().then(wave);
-  //   }
-
-  //   previousColor.current = color;
-  // }, [color]);
+    rotate(rotateProp);
+  }, [rotateProp]);
 
   return <div ref={containerRef} style={{ width: "100%", height: "100%" }} />;
 });
