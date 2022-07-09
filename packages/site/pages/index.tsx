@@ -1,7 +1,7 @@
 import * as React from "react";
 import dynamic from "next/dynamic";
+import type { Colorway } from "@replayio/hoverboard";
 import { Column, Logo, PurchaseForm } from "components";
-import type { Colorway } from "components/Colors";
 import { PlaceHolderWrapper } from "components/PlaceHolderWrapper";
 import { Background } from "components/Background";
 

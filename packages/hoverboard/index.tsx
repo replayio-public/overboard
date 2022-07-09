@@ -2,11 +2,25 @@ import lottie, { AnimationItem } from "lottie-web";
 import { interpolate } from "@popmotion/popcorn";
 import React, { forwardRef, useEffect, useImperativeHandle, useRef } from "react";
 
-import animationData from "./hoverboard.json";
+import hoverboardRed from "./hoverboard-red.json";
+import hoverboardGreen from "./hoverboard-green.json";
+import hoverboardBlue from "./hoverboard-blue.json";
 
-type Colorway = any;
+const hoverboardAnimations = {
+  red: hoverboardRed,
+  green: hoverboardGreen,
+  blue: hoverboardBlue,
+};
 
-type HoverboardControls = {
+export const colorways = {
+  red: ["#FF7E9F", "#F41C52"],
+  green: ["#B6F0A2", "#279C14"],
+  blue: ["#8AA9FA", "#3749E7"],
+} as const;
+
+export type Colorway = keyof typeof colorways;
+
+export type HoverboardControls = {
   /** Continuously flips the hoverboard in a full 360 degree rotation. */
   flip: () => void;
 
@@ -17,7 +31,7 @@ type HoverboardControls = {
   wave: () => void;
 };
 
-type HoverboardProps = {
+export type HoverboardProps = {
   /**
    * Sets the colorway of the hoverboard. Transitions between colors will play
    * the flip animation once and then back to its previous animation.
@@ -32,7 +46,7 @@ type HoverboardProps = {
 };
 
 export const Hoverboard = forwardRef<HoverboardControls, HoverboardProps>(function Hoverboard(
-  { color, rotate: rotateProp = null },
+  { color = "blue", rotate: rotateProp = null },
   ref
 ) {
   const containerRef = useRef(null);
@@ -76,7 +90,7 @@ export const Hoverboard = forwardRef<HoverboardControls, HoverboardProps>(functi
       renderer: "svg",
       loop: true,
       autoplay: true,
-      animationData,
+      animationData: hoverboardAnimations[color],
     });
 
     animationRef.current = animation;
@@ -84,15 +98,15 @@ export const Hoverboard = forwardRef<HoverboardControls, HoverboardProps>(functi
     return () => {
       animation?.destroy();
     };
-  }, []);
-
-  useEffect(() => {
-    if (previousColor.current !== color) {
-      flip();
-    }
-
-    previousColor.current = color;
   }, [color]);
+
+  // useEffect(() => {
+  //   if (previousColor.current !== color) {
+  //     flip();
+  //   }
+
+  //   previousColor.current = color;
+  // }, [color]);
 
   useEffect(() => {
     if (rotateProp === null) {

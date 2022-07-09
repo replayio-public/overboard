@@ -1,6 +1,7 @@
 import { useCallback, useState } from "react";
+import { colorways } from "@replayio/hoverboard";
 
-import { Colors, Color, colorStops } from "./Colors";
+import { Colors, Color } from "./Colors";
 import { Column } from "./Column";
 import { PurchaseButton } from "./PurchaseButton";
 
@@ -41,7 +42,7 @@ export function PurchaseForm({
     >
       <Column gap={3}>
         <Colors onColorChange={color => onDataChange("color", color)}>
-          {Object.entries(colorStops).map(([name, [start, end]]) => (
+          {Object.entries(colorways).map(([name, [start, end]]) => (
             <Color
               key={name}
               label={name}
