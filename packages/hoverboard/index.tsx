@@ -2,15 +2,7 @@ import lottie, { AnimationItem } from "lottie-web";
 import { interpolate } from "@popmotion/popcorn";
 import React, { forwardRef, useEffect, useImperativeHandle, useRef } from "react";
 
-import hoverboardRed from "./hoverboard-red.json";
-import hoverboardGreen from "./hoverboard-green.json";
-import hoverboardBlue from "./hoverboard-blue.json";
-
-const hoverboardAnimations = {
-  red: hoverboardRed,
-  green: hoverboardGreen,
-  blue: hoverboardBlue,
-};
+import animationData from "./animation-data.json";
 
 export const colorways = {
   red: ["#FF7E9F", "#F41C52"],
@@ -50,16 +42,11 @@ export const Hoverboard = forwardRef<HoverboardControls, HoverboardProps>(functi
   ref
 ) {
   const containerRef = useRef(null);
-  const previousColor = useRef(null);
+  const previousColor = useRef<Colorway | null>(null);
   const animationRef = useRef<AnimationItem>();
-  const timeoutId = useRef<ReturnType<typeof setTimeout>>(null);
 
   function reset() {
-    if (timeoutId.current) {
-      clearTimeout(timeoutId.current);
-    }
-    animationRef.current!.stop();
-    animationRef.current!.setSpeed(1);
+    animationRef.current!.playSegments([0, animationRef.current!.totalFrames], true);
   }
 
   function flip() {
@@ -67,7 +54,7 @@ export const Hoverboard = forwardRef<HoverboardControls, HoverboardProps>(functi
   }
 
   function wave() {
-    animationRef.current!.playSegments([0, 24]);
+    animationRef.current!.playSegments([0, 24], true);
   }
 
   function rotate(amount: number) {
@@ -83,30 +70,22 @@ export const Hoverboard = forwardRef<HoverboardControls, HoverboardProps>(functi
   useImperativeHandle(ref, () => ({ reset, flip, wave }));
 
   useEffect(() => {
-    if (!containerRef.current) return;
+    if (containerRef.current === null) return;
 
-    const animation = lottie.loadAnimation({
+    animationRef.current = lottie.loadAnimation({
       container: containerRef.current!,
       renderer: "svg",
       loop: true,
-      autoplay: true,
-      animationData: hoverboardAnimations[color],
+      autoplay: false,
+      animationData,
     });
 
-    animationRef.current = animation;
+    const animation = animationRef.current!;
 
     return () => {
       animation?.destroy();
     };
-  }, [color]);
-
-  // useEffect(() => {
-  //   if (previousColor.current !== color) {
-  //     flip();
-  //   }
-
-  //   previousColor.current = color;
-  // }, [color]);
+  }, []);
 
   useEffect(() => {
     if (rotateProp === null) {
@@ -116,5 +95,15 @@ export const Hoverboard = forwardRef<HoverboardControls, HoverboardProps>(functi
     rotate(rotateProp);
   }, [rotateProp]);
 
-  return <div ref={containerRef} style={{ width: "100%", height: "100%" }} />;
+  useEffect(() => {
+    if (previousColor.current !== color) {
+      flip();
+    } else {
+      wave();
+    }
+
+    previousColor.current = color;
+  }, [color]);
+
+  return <div ref={containerRef} className={color} style={{ width: "100%", height: "100%" }} />;
 });
