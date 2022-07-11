@@ -41,8 +41,7 @@ export const Hoverboard = forwardRef<HoverboardControls, HoverboardProps>(functi
   { color = "blue", rotate: rotateProp = null },
   ref
 ) {
-  const containerRef = useRef(null);
-  const previousColor = useRef<Colorway | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<AnimationItem>();
 
   function reset() {
@@ -82,6 +81,8 @@ export const Hoverboard = forwardRef<HoverboardControls, HoverboardProps>(functi
 
     const animation = animationRef.current!;
 
+    wave();
+
     return () => {
       animation?.destroy();
     };
@@ -94,16 +95,6 @@ export const Hoverboard = forwardRef<HoverboardControls, HoverboardProps>(functi
 
     rotate(rotateProp);
   }, [rotateProp]);
-
-  useEffect(() => {
-    if (previousColor.current !== color) {
-      flip();
-    } else {
-      wave();
-    }
-
-    previousColor.current = color;
-  }, [color]);
 
   return <div ref={containerRef} className={color} style={{ width: "100%", height: "100%" }} />;
 });
