@@ -1,1 +1,2 @@
-export * from "./components/Hoverboard";
+export * from "./Hoverboard";
+export * from "./Logo";

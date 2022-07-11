@@ -8,8 +8,8 @@
   "sideEffects": false,
   "files": [
     "dist",
-    "hoverboard.css",
-    "hoverboard.json"
+    "index.css",
+    "animation-data.json"
   ],
   "scripts": {
     "prepublishOnly": "yarn build",
