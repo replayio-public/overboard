@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useFrame } from "use-frame";
 import { wrap } from "@popmotion/popcorn";
-import { Hoverboard } from "@replayio/hoverboard";
+import { Hoverboard } from "@replayio/overboard";
 
 export default function HoverboardRotate() {
   const [rotate, setRotate] = useState(0);

@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { colorways } from "@replayio/hoverboard";
+import { colorways } from "@replayio/overboard";
 
 import { Colors, Color } from "./Colors";
 import { Column } from "./Column";

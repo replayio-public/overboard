@@ -1,5 +1,5 @@
 {
-  "include": ["index.tsx"],
+  "include": ["src/index.ts"],
   "compilerOptions": {
     "target": "es2019",
     "module": "esnext",

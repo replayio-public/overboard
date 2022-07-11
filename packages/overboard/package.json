@@ -1,7 +1,7 @@
 {
-  "name": "@replayio/hoverboard",
+  "name": "@replayio/overboard",
   "version": "0.0.0",
-  "description": "The offical hoverboard component for Replay.io",
+  "description": "The offical design system for the fictitious Replay Overboard store.",
   "main": "dist/index.js",
   "module": "dist/esm/index.js",
   "typings": "dist/index.d.ts",
@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "prepublishOnly": "yarn build",
-    "build": "tsup index.tsx --dts --format esm,cjs --legacy-output",
+    "build": "tsup src/index.ts --dts --format esm,cjs --legacy-output",
     "dev": "yarn build --watch --sourcemap"
   },
   "repository": {

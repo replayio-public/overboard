@@ -2,7 +2,7 @@ import lottie, { AnimationItem } from "lottie-web";
 import { interpolate } from "@popmotion/popcorn";
 import React, { forwardRef, useEffect, useImperativeHandle, useRef } from "react";
 
-import animationData from "./animation-data.json";
+import animationData from "../../animation-data.json";
 
 export const colorways = {
   red: ["#FF7E9F", "#F41C52"],

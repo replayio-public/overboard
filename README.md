@@ -6,13 +6,13 @@ Welcome to Overboard, the ficticious online store that has a few bugs that need 
 
 This is a monorepo powered by Yarn workspaces. The following workspaces are available, located in the [packages](/packages) directory:
 
-- [hoverboard](/packages/hoverboard/)
+- [overboard](/packages/overboard/)
 
-  The official hoverboard of Replay that comes in a variety of colors.
+  The official design system for Overboard.
 
 - [site](/packages/site/)
 
-  The NextJS site that powers our fictional online store.
+  The NextJS site that powers the fictional online store.
 
 ```
 yarn install
@@ -27,5 +27,5 @@ yarn dev
 To filter which packages to run you can use the filter flag:
 
 ```
-yarn dev --filter hoverboard
+yarn dev --filter overboard
 ```
