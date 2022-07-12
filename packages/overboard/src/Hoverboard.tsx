@@ -1,5 +1,5 @@
 import lottie, { AnimationItem } from "lottie-web";
-import { interpolate } from "@popmotion/popcorn";
+import { interpolate, wrap } from "@popmotion/popcorn";
 import React, { forwardRef, useEffect, useImperativeHandle, useRef } from "react";
 
 import animationData from "../animation-data.json";
@@ -16,11 +16,14 @@ export type HoverboardControls = {
   /** Continuously flips the hoverboard in a full 360 degree rotation. */
   flip: () => void;
 
+  /** Continuously animates the hoverboard up and down on a sine wave. */
+  wave: () => void;
+
   /** Reset the hoverboard animation to its original animation of both flipping and waving. */
   reset: () => void;
 
-  /** Continuously animates the hoverboard up and down on a sine wave. */
-  wave: () => void;
+  /** Rotate the hoverboard programmatically from 0-360 degrees. */
+  rotate: (amount: number) => void;
 };
 
 export type HoverboardProps = {
@@ -44,10 +47,6 @@ export const Hoverboard = forwardRef<HoverboardControls, HoverboardProps>(functi
   const containerRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<AnimationItem>();
 
-  function reset() {
-    animationRef.current!.playSegments([0, animationRef.current!.totalFrames], true);
-  }
-
   function flip() {
     animationRef.current!.playSegments([24, animationRef.current!.totalFrames], true);
   }
@@ -56,17 +55,22 @@ export const Hoverboard = forwardRef<HoverboardControls, HoverboardProps>(functi
     animationRef.current!.playSegments([0, 24], true);
   }
 
+  function reset() {
+    animationRef.current!.playSegments([0, animationRef.current!.totalFrames], true);
+  }
+
   function rotate(amount: number) {
     const interpolateFrameFromRotation = interpolate(
       [0, 360],
       [24, animationRef.current!.totalFrames]
     );
-    const nextFrame = Math.floor(interpolateFrameFromRotation(amount) as number);
+    const interpolatedFrame = interpolateFrameFromRotation(amount) as number;
+    const nextFrame = wrap(0, 360, Math.floor(interpolatedFrame));
 
     animationRef.current?.goToAndStop(nextFrame, true);
   }
 
-  useImperativeHandle(ref, () => ({ reset, flip, wave }));
+  useImperativeHandle(ref, () => ({ flip, wave, reset, rotate }));
 
   useEffect(() => {
     if (containerRef.current === null) return;
