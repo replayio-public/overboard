@@ -40,31 +40,31 @@ export type HoverboardProps = {
   rotate?: number;
 };
 
+const WAVE_ANIMATION_FRAME_START = 24;
+
 export const Hoverboard = forwardRef<HoverboardControls, HoverboardProps>(function Hoverboard(
   { color = "blue", rotate: rotateProp = null },
   ref
 ) {
   const containerRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<AnimationItem>();
+  const totalFramesRef = useRef<number>(0);
+  const interpolateFrameFromRotationRef = useRef<ReturnType<typeof interpolate> | null>(null);
 
   function flip() {
-    animationRef.current!.playSegments([24, animationRef.current!.totalFrames], true);
+    animationRef.current!.playSegments([WAVE_ANIMATION_FRAME_START, totalFramesRef.current], true);
   }
 
   function wave() {
-    animationRef.current!.playSegments([0, 24], true);
+    animationRef.current!.playSegments([0, WAVE_ANIMATION_FRAME_START], true);
   }
 
   function reset() {
-    animationRef.current!.playSegments([0, animationRef.current!.totalFrames], true);
+    animationRef.current!.playSegments([0, totalFramesRef.current], true);
   }
 
   function rotate(amount: number) {
-    const interpolateFrameFromRotation = interpolate(
-      [0, 360],
-      [24, animationRef.current!.totalFrames]
-    );
-    const interpolatedFrame = interpolateFrameFromRotation(amount) as number;
+    const interpolatedFrame = interpolateFrameFromRotationRef.current!(amount) as number;
     const nextFrame = wrap(0, 360, Math.floor(interpolatedFrame));
 
     animationRef.current?.goToAndStop(nextFrame, true);
@@ -82,6 +82,15 @@ export const Hoverboard = forwardRef<HoverboardControls, HoverboardProps>(functi
       autoplay: false,
       animationData,
     });
+
+    /** Cache total frames since this will change when using playSegments. */
+    totalFramesRef.current = animationRef.current!.totalFrames;
+
+    /** Calculate interpolation for rotation here as well so it's not done each frame. */
+    interpolateFrameFromRotationRef.current = interpolate(
+      [0, 360],
+      [WAVE_ANIMATION_FRAME_START, totalFramesRef.current]
+    );
 
     const animation = animationRef.current!;
 
