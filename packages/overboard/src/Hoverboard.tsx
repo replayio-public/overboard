@@ -48,6 +48,7 @@ export const Hoverboard = forwardRef<HoverboardControls, HoverboardProps>(functi
 ) {
   const containerRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<AnimationItem>();
+  const initialFrameRef = useRef<number | null>(null);
   const totalFramesRef = useRef<number>(0);
   const interpolateFrameFromRotationRef = useRef<ReturnType<typeof interpolate> | null>(null);
 
@@ -64,10 +65,14 @@ export const Hoverboard = forwardRef<HoverboardControls, HoverboardProps>(functi
   }
 
   function rotate(amount: number) {
-    const interpolatedFrame = interpolateFrameFromRotationRef.current!(amount) as number;
-    const nextFrame = wrap(0, 360, Math.floor(interpolatedFrame));
+    if (animationRef.current) {
+      const interpolatedFrame = interpolateFrameFromRotationRef.current!(amount) as number;
+      const nextFrame = wrap(0, 360, Math.floor(interpolatedFrame));
 
-    animationRef.current?.goToAndStop(nextFrame, true);
+      animationRef.current.goToAndStop(nextFrame, true);
+    } else {
+      initialFrameRef.current = amount;
+    }
   }
 
   useImperativeHandle(ref, () => ({ flip, wave, reset, rotate }));
@@ -94,7 +99,12 @@ export const Hoverboard = forwardRef<HoverboardControls, HoverboardProps>(functi
 
     const animation = animationRef.current!;
 
-    wave();
+    /** If rotate was called prior to mounting move to that value instead of auto playing. */
+    if (initialFrameRef.current) {
+      rotate(initialFrameRef.current);
+    } else {
+      wave();
+    }
 
     return () => {
       animation?.destroy();
