@@ -1,4 +1,4 @@
-import { Children, cloneElement, isValidElement } from "react";
+import React, { Children, cloneElement, isValidElement } from "react";
 import type { ReactNode } from "react";
 
 export function Colors({
