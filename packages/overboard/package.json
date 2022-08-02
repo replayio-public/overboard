@@ -1,6 +1,6 @@
 {
   "name": "@replayio/overboard",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "The offical design system for the fictitious Replay Overboard store.",
   "main": "dist/index.js",
   "module": "dist/esm/index.js",
