@@ -1,3 +1,20 @@
+:root {
+  --overboard-font-size-primary: 5rem;
+  --overboard-font-size-secondary: 2rem;
+  --overboard-font-size-tertiary: 1rem;
+
+  --overboard-radii-primary: 0.2rem;
+  --overboard-radii-secondary: 0.4rem;
+  --overboard-radii-tertiary: 2rem;
+
+  --overboard-space-1: 0.8rem;
+  --overboard-space-2: 1rem;
+  --overboard-space-3: 2rem;
+  --overboard-space-4: 3rem;
+  --overboard-space-5: 5rem;
+  --overboard-space-6: 18rem;
+}
+
 /* <Hoverboard /> colors  */
 .red .color-1 {
   fill: #f41c52;
@@ -75,15 +92,15 @@
   position: relative;
   pointer-events: none;
   content: "";
-  border: var(--radii-primary) solid #9d6bff;
+  border: var(--overboard-radii-primary) solid #9d6bff;
   border-radius: 100%;
 }
 
 .Color input {
   grid-area: 1 / 1 / 1 / 1;
   appearance: none;
-  width: var(--space-4);
-  height: var(--space-4);
+  width: var(--overboard-space-4);
+  height: var(--overboard-space-4);
   min-width: 40px;
   min-height: 40px;
   border-radius: 100%;
@@ -101,4 +118,55 @@
 
 .Color input:checked {
   transform: scale(0.8);
+}
+
+/* <Features /> component */
+
+.Features {
+  margin-top: var(--overboard-space-4);
+  place-self: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  gap: 0.8rem;
+  list-style: none;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.Features li:not([aria-hidden]) {
+  text-decoration: underline;
+}
+
+.Features:after {
+  visibility: hidden;
+  position: absolute;
+  bottom: calc(var(--overboard-space-2) * -1);
+  width: 100%;
+  height: 1px;
+  margin-bottom: var(--overboard-space-2);
+  content: "";
+  display: block;
+  background-color: #fff;
+}
+
+@media (min-width: 1024px) {
+  .Features {
+    margin-top: 0;
+    flex-direction: row;
+  }
+
+  .Features li:not([aria-hidden]) {
+    text-decoration: none;
+  }
+
+  .Features:after {
+    visibility: visible;
+  }
 }
