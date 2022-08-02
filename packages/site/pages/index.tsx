@@ -1,7 +1,7 @@
 import * as React from "react";
 import dynamic from "next/dynamic";
-import { Background, Colorway, Features } from "@replayio/overboard";
-import { Column, Logo, PurchaseForm } from "components";
+import { Background, Colorway, Features, Logo } from "@replayio/overboard";
+import { Column, PurchaseForm } from "components";
 import { PlaceHolderWrapper } from "components/PlaceHolderWrapper";
 
 const Hoverboard = dynamic(async () => (await import("@replayio/overboard")).Hoverboard, {

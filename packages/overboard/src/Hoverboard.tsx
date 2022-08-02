@@ -13,17 +13,20 @@ export const colorways = {
 export type Colorway = keyof typeof colorways;
 
 export type HoverboardControls = {
-  /** Continuously flips the hoverboard in a full 360 degree rotation. */
-  flip: () => void;
+  /**
+   * Continuously flips the hoverboard in a full 360 degree rotation.
+   * Pass a number from 0-360 to programmatically rotate 360 degrees.
+   */
+  flip: (amount: number) => void;
 
-  /** Continuously animates the hoverboard up and down on a sine wave. */
-  wave: () => void;
+  /**
+   * Continuously animates the hoverboard up and down along a sine wave.
+   * Pass a number from 0-100 to programmatically adjust the wave animation.
+   */
+  wave: (amount: number) => void;
 
   /** Reset the hoverboard animation to its original animation of both flipping and waving. */
   reset: () => void;
-
-  /** Rotate the hoverboard programmatically from 0-360 degrees. */
-  rotate: (amount: number) => void;
 };
 
 export type HoverboardProps = {
@@ -35,47 +38,69 @@ export type HoverboardProps = {
 
   /**
    * Explicitly controls the rotation of the hoverboard. Obtain a ref to the `Hoverboard`
-   * component and use the `rotate` method when frequent rotation updates are required.
+   * component and use the `flip` method when frequent rotation updates are required.
    */
-  rotate?: number;
+  flip?: number;
+
+  /**
+   * Explicitly controls the wave of the hoverboard. Obtain a ref to the `Hoverboard`
+   * component and use the `wave` method when frequent wave updates are required.
+   */
+  wave?: number;
 };
 
 const WAVE_ANIMATION_FRAME_START = 24;
 
 export const Hoverboard = forwardRef<HoverboardControls, HoverboardProps>(function Hoverboard(
-  { color = "blue", rotate: rotateProp = null },
+  { color = "blue", flip: flipProp = null, wave: waveProp = null },
   ref
 ) {
   const containerRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<AnimationItem>();
-  const initialFrameRef = useRef<number | null>(null);
+  const initialFlipFrameRef = useRef<number | null>(null);
+  const initialWaveFrameRef = useRef<number | null>(null);
+  const interpolateFrameFromFlipRef = useRef<ReturnType<typeof interpolate> | null>(null);
+  const interpolateFrameFromWaveRef = useRef<ReturnType<typeof interpolate> | null>(null);
   const totalFramesRef = useRef<number>(0);
-  const interpolateFrameFromRotationRef = useRef<ReturnType<typeof interpolate> | null>(null);
 
-  function flip() {
-    animationRef.current!.playSegments([WAVE_ANIMATION_FRAME_START, totalFramesRef.current], true);
-  }
-
-  function wave() {
-    animationRef.current!.playSegments([0, WAVE_ANIMATION_FRAME_START], true);
-  }
-
-  function reset() {
-    animationRef.current!.playSegments([0, totalFramesRef.current], true);
-  }
-
-  function rotate(amount: number) {
-    if (animationRef.current) {
-      const interpolatedFrame = interpolateFrameFromRotationRef.current!(amount) as number;
-      const nextFrame = wrap(0, 360, Math.floor(interpolatedFrame));
-
-      animationRef.current.goToAndStop(nextFrame, true);
+  function flip(amount: number | undefined) {
+    if (amount === undefined) {
+      animationRef.current?.playSegments(
+        [WAVE_ANIMATION_FRAME_START, totalFramesRef.current],
+        true
+      );
     } else {
-      initialFrameRef.current = amount;
+      if (animationRef.current) {
+        const interpolatedFrame = interpolateFrameFromFlipRef.current!(amount) as number;
+        const nextFrame = wrap(0, 360, Math.floor(interpolatedFrame));
+
+        animationRef.current.goToAndStop(nextFrame, true);
+      } else {
+        initialFlipFrameRef.current = amount;
+      }
     }
   }
 
-  useImperativeHandle(ref, () => ({ flip, wave, reset, rotate }));
+  function wave(amount: number | undefined) {
+    if (amount === undefined) {
+      animationRef.current?.playSegments([0, WAVE_ANIMATION_FRAME_START], true);
+    } else {
+      if (animationRef.current) {
+        const interpolatedFrame = interpolateFrameFromWaveRef.current!(amount) as number;
+        const nextFrame = wrap(0, 100, Math.floor(interpolatedFrame));
+
+        animationRef.current.goToAndStop(nextFrame, true);
+      } else {
+        initialWaveFrameRef.current = amount;
+      }
+    }
+  }
+
+  function reset() {
+    animationRef.current?.playSegments([0, totalFramesRef.current], true);
+  }
+
+  useImperativeHandle(ref, () => ({ flip, wave, reset }));
 
   useEffect(() => {
     if (containerRef.current === null) return;
@@ -84,26 +109,29 @@ export const Hoverboard = forwardRef<HoverboardControls, HoverboardProps>(functi
       container: containerRef.current!,
       renderer: "svg",
       loop: true,
-      autoplay: false,
+      autoplay: true,
       animationData,
     });
 
     /** Cache total frames since this will change when using playSegments. */
     totalFramesRef.current = animationRef.current!.totalFrames;
 
-    /** Calculate interpolation for rotation here as well so it's not done each frame. */
-    interpolateFrameFromRotationRef.current = interpolate(
+    /** Calculate interpolation for waving. */
+    interpolateFrameFromWaveRef.current = interpolate([0, 100], [0, WAVE_ANIMATION_FRAME_START]);
+
+    /** Calculate interpolation for rotation. */
+    interpolateFrameFromFlipRef.current = interpolate(
       [0, 360],
       [WAVE_ANIMATION_FRAME_START, totalFramesRef.current]
     );
 
     const animation = animationRef.current!;
 
-    /** If rotate was called prior to mounting move to that value instead of auto playing. */
-    if (initialFrameRef.current) {
-      rotate(initialFrameRef.current);
-    } else {
-      wave();
+    /** If flip or wave were called prior to mounting move to that value instead of auto playing. */
+    if (initialFlipFrameRef.current) {
+      flip(initialFlipFrameRef.current);
+    } else if (initialWaveFrameRef.current) {
+      wave(initialWaveFrameRef.current);
     }
 
     return () => {
@@ -112,12 +140,20 @@ export const Hoverboard = forwardRef<HoverboardControls, HoverboardProps>(functi
   }, []);
 
   useEffect(() => {
-    if (rotateProp === null) {
+    if (flipProp === null) {
       return;
     }
 
-    rotate(rotateProp);
-  }, [rotateProp]);
+    flip(flipProp);
+  }, [flipProp]);
+
+  useEffect(() => {
+    if (waveProp === null) {
+      return;
+    }
+
+    wave(waveProp);
+  }, [waveProp]);
 
   return <div ref={containerRef} className={color} style={{ width: "100%", height: "100%" }} />;
 });

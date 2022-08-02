@@ -4,12 +4,12 @@ import { wrap } from "@popmotion/popcorn";
 import { Hoverboard } from "@replayio/overboard";
 
 export default function HoverboardRotate() {
-  const [rotate, setRotate] = useState(0);
+  const [flipAmount, setFlipAmount] = useState(0);
 
   useFrame(() => {
     const speed = 3;
-    setRotate(rotate => wrap(0, 360, rotate + speed));
+    setFlipAmount(flipAmount => wrap(0, 360, flipAmount + speed));
   });
 
-  return <Hoverboard rotate={rotate} />;
+  return <Hoverboard flip={flipAmount} />;
 }
