@@ -29,6 +29,7 @@ export function Color({
   label,
   value,
   name,
+  checked,
   defaultChecked,
   startColor,
   endColor,
@@ -38,6 +39,7 @@ export function Color({
   value: string;
   startColor: string;
   endColor: string;
+  checked?: boolean;
   defaultChecked?: boolean;
   name?: string;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -48,6 +50,7 @@ export function Color({
         type="radio"
         name={name}
         value={value}
+        checked={checked}
         defaultChecked={defaultChecked}
         onChange={onChange}
         style={
