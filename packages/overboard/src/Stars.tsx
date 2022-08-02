@@ -1,10 +1,10 @@
-import s from "./Stars.module.css";
+import React from "react";
 
-const Stars = () => {
+export const Stars = () => {
   return (
     <svg
       style={{ minWidth: 1440 }}
-      className={s["stars"]}
+      className="Stars"
       viewBox="0 0 1440 415"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -3332,5 +3332,3 @@ const Stars = () => {
     </svg>
   );
 };
-
-export default Stars;

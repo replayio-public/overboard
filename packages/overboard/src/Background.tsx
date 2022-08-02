@@ -1,7 +1,7 @@
 import React from "react";
 
-import AnimatedGrid from "./AnimatedGrid";
-import Stars from "./Stars";
+import { AnimatedGrid } from "./AnimatedGrid";
+import { Stars } from "./Stars";
 
 export function Background() {
   return (
