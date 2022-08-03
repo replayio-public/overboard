@@ -4,8 +4,10 @@ import { AddToCartButton, Colors, Color, colorways } from "@replayio/overboard";
 import { Column } from "./Column";
 
 export function PurchaseForm({
+  data,
   onDataChange,
 }: {
+  data: any;
   onDataChange: (id: string, payload: any) => void;
 }) {
   const [hasError, setHasError] = useState(false);
@@ -45,6 +47,7 @@ export function PurchaseForm({
               key={name}
               label={name}
               value={name.toLowerCase()}
+              checked={name === data.color}
               startColor={start}
               endColor={end}
             />

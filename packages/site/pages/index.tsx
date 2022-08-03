@@ -44,7 +44,7 @@ export default function Product() {
 
       <Background />
 
-      <PurchaseForm onDataChange={handleDataChange} />
+      <PurchaseForm data={formData} onDataChange={handleDataChange} />
     </main>
   );
 }
