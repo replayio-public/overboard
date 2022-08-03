@@ -1,8 +1,7 @@
 import { useCallback, useState } from "react";
-import { Colors, Color, colorways } from "@replayio/overboard";
+import { AddToCartButton, Colors, Color, colorways } from "@replayio/overboard";
 
 import { Column } from "./Column";
-import { PurchaseButton } from "./PurchaseButton";
 
 export function PurchaseForm({
   onDataChange,
@@ -53,7 +52,7 @@ export function PurchaseForm({
         </Colors>
       </Column>
 
-      <PurchaseButton hasError={hasError} />
+      <AddToCartButton hasError={hasError} />
     </Column>
   );
 }

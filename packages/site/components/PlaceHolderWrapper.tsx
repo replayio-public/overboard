@@ -1,4 +1,4 @@
-import AspectRatioBox from "./AspectRatioBox";
+import { AspectRatioBox } from "./AspectRatioBox";
 
 export function PlaceHolderWrapper({ children }) {
   return (

@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "@popmotion/popcorn": "^0.4.4",
-    "lottie-web": "^5.9.6"
+    "lottie-web": "^5.9.6",
+    "motion": "^10.13.1"
   }
 }

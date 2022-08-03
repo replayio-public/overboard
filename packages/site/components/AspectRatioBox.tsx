@@ -6,7 +6,13 @@ type AspectRatioBoxProps = {
   children?: ReactNode;
 } & React.HTMLProps<HTMLDivElement>;
 
-const AspectRatioBox = ({ ratio, responsive, children, style, ...rest }: AspectRatioBoxProps) => {
+export function AspectRatioBox({
+  ratio,
+  responsive,
+  children,
+  style,
+  ...rest
+}: AspectRatioBoxProps) {
   return (
     <div
       style={{
@@ -22,6 +28,4 @@ const AspectRatioBox = ({ ratio, responsive, children, style, ...rest }: AspectR
       {children}
     </div>
   );
-};
-
-export default AspectRatioBox;
+}

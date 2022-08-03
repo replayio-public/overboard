@@ -1,3 +1,4 @@
+export * from "./AddToCartButton";
 export * from "./Background";
 export * from "./Colors";
 export * from "./Hoverboard";
