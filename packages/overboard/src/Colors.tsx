@@ -29,6 +29,7 @@ export function Color({
   label,
   value,
   name,
+  readOnly,
   checked,
   defaultChecked,
   startColor,
@@ -39,6 +40,7 @@ export function Color({
   value: string;
   startColor: string;
   endColor: string;
+  readOnly?: boolean;
   checked?: boolean;
   defaultChecked?: boolean;
   name?: string;
@@ -50,6 +52,7 @@ export function Color({
         type="radio"
         name={name}
         value={value}
+        readOnly={readOnly}
         checked={checked}
         defaultChecked={defaultChecked}
         onChange={onChange}
