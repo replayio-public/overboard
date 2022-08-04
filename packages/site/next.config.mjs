@@ -1,9 +1,7 @@
-import withTM from "next-transpile-modules";
-
-export default withTM(["@replayio/overboard"])({
+export default {
   productionBrowserSourceMaps: true,
   reactStrictMode: true,
   typescript: {
     ignoreBuildErrors: true,
   },
-});
+};
