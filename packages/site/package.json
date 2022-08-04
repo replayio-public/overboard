@@ -9,10 +9,8 @@
     "build": "next build"
   },
   "dependencies": {
-    "@babel/core": "^7.18.6",
-    "@babel/plugin-transform-react-display-name": "^7.18.6",
     "@replayio/overboard": "*",
-    "next": "^12.2.2",
+    "next": "^12.2.4",
     "next-transpile-modules": "^9.0.0",
     "react": "*",
     "react-dom": "*",

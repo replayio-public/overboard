@@ -3,7 +3,6 @@
   "version": "0.4.1",
   "description": "The offical design system for the fictitious Replay Overboard store.",
   "main": "dist/index.js",
-  "module": "dist/esm/index.js",
   "typings": "dist/index.d.ts",
   "sideEffects": false,
   "files": [
@@ -13,8 +12,8 @@
   ],
   "scripts": {
     "prepublishOnly": "yarn build",
-    "build": "tsup src/index.ts --dts --format esm,cjs --legacy-output",
-    "dev": "yarn build --watch --sourcemap"
+    "build": "babel src --extensions '.ts,.tsx' --out-dir dist && tsc --outFile dist/index.d.ts",
+    "dev": "yarn build --watch"
   },
   "repository": {
     "type": "git",

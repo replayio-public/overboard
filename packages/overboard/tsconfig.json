@@ -1,6 +1,7 @@
 {
   "include": ["src/index.ts"],
   "compilerOptions": {
+    "emitDeclarationOnly": true,
     "target": "es2019",
     "module": "esnext",
     "lib": ["dom", "esnext"],
