@@ -11,8 +11,9 @@
     "animation-data.json"
   ],
   "scripts": {
-    "prepublishOnly": "yarn build",
-    "build": "babel src --extensions '.ts,.tsx' --out-dir dist && tsc --outFile dist/index.d.ts",
+    "prepublishOnly": "yarn build && yarn types",
+    "build": "babel src --extensions '.ts,.tsx' --out-dir dist",
+    "types": "tsc --outFile dist/index.d.ts",
     "dev": "yarn build --watch"
   },
   "repository": {
