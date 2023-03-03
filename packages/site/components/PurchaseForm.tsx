@@ -29,6 +29,8 @@ export function PurchaseForm({
       setHasError(true);
       throw new Error(errorMessage);
     }
+
+    alert("Thanks for your purchase! 🎉");
   }, []);
 
   return (
