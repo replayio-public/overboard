@@ -9,13 +9,20 @@ jobs:
 
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
-      - name: Cypress run
+      - name: Install deps and prepare
         uses: cypress-io/github-action@v5.1.0
         with:
           browser: replay-chromium
           build: npm run build
           start: npm run dev
+          runTests: false
+
+      - name: Run tests
+        uses: cypress-io/github-action@v5.1.0
+        with:
           working-directory: ./packages/site
+          install: false
+
 
       # Always run this step so failed tests are uploaded
       - name: Upload replays
