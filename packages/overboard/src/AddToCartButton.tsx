@@ -68,9 +68,11 @@ export const AddToCartButton = forwardRef<
   }, [errorProgressProp]);
 
   return (
-    <button className={className}>
+    <button data-cy="AddToCartButton" className={className}>
       <span className="AddToCartButton-label-default">Add to Cart</span>
-      <span className="AddToCartButton-label-error">Error</span>
+      <span data-cy="AddToCartButtonError" className="AddToCartButton-label-error">
+        Error
+      </span>
     </button>
   );
 });
