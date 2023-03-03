@@ -15,6 +15,7 @@ jobs:
           browser: replay-chromium
           build: npm run build
           start: npm run dev
+          working-directory: ./packages/site
 
       # Always run this step so failed tests are uploaded
       - name: Upload replays
