@@ -11,14 +11,14 @@ jobs:
       # and run all Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v5.1.0
-				with:
-					browser: replay-chromium
-					build: npm run build
+        with:
+          browser: replay-chromium
+          build: npm run build
           start: npm run dev
 
-			# Always run this step so failed tests are uploaded
-			- name: Upload replays
-				if: always()
-				uses: replayio/action-upload@v0.4.7
-				with:
-				  api-key: ${{ secrets.RECORD_REPLAY_API_KEY }}
+      # Always run this step so failed tests are uploaded
+      - name: Upload replays
+        if: always()
+        uses: replayio/action-upload@v0.4.7
+        with:
+          api-key: ${{ secrets.RECORD_REPLAY_API_KEY }}
