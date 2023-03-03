@@ -14,12 +14,12 @@ jobs:
         with:
           browser: replay-chromium
           build: npm run build
-          start: npm run dev
           runTests: false
 
       - name: Run tests
         uses: cypress-io/github-action@v5.1.0
         with:
+          start: npm run dev
           working-directory: ./packages/site
           install: false
 
