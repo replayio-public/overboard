@@ -47,7 +47,7 @@ export function Color({
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }) {
   return (
-    <label className="Color" aria-label={label}>
+    <label className="Color" data-cy={value} aria-label={label}>
       <input
         type="radio"
         name={name}
