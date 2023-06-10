@@ -612,21 +612,21 @@
     style-value-types "^3.1.7"
     tslib "^1.10.0"
 
-"@replayio/cypress@^0.5.13":
-  version "0.5.13"
-  resolved "https://registry.yarnpkg.com/@replayio/cypress/-/cypress-0.5.13.tgz#0cd536be79f252f77ee3040b59cec352b4668498"
-  integrity sha512-Nap9fBxBa8it7IcASP//ALsf/6PEDQTI5XveAwyPURxvjeOq+j1+euMvW1qFUIXLTDHSgzHSs4foZKisRfn4cg==
+"@replayio/cypress@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@replayio/cypress/-/cypress-1.0.1.tgz#9ac721635fcd94d4c58a7127a88f3db1da66ed51"
+  integrity sha512-n1UMNk8Nbkxj3Q5ROzU/rRF7cPkaqKM84qooYYqBrD5GMj62IC3HWC1nm2J005Jp/CbldCzwEboEy+L/69ge6A==
   dependencies:
-    "@replayio/replay" "^0.12.8"
-    "@replayio/test-utils" "^0.5.7"
+    "@replayio/replay" "^0.12.12"
+    "@replayio/test-utils" "^1.0.0"
     debug "^4.3.4"
     semver "^7.3.8"
     uuid "^8.3.2"
 
-"@replayio/replay@^0.12.8":
-  version "0.12.8"
-  resolved "https://registry.yarnpkg.com/@replayio/replay/-/replay-0.12.8.tgz#4283696adb429ffeb53684540853c0e29dda90e5"
-  integrity sha512-IDoYDjAdMS0/Lty9sf0tevJOTE5jx9O5gD4Fy7bBoLVJatjjldX2XSU3ILtHcJ+sVNF5HE0R0ZKF+ctwjZbx5Q==
+"@replayio/replay@^0.12.12":
+  version "0.12.12"
+  resolved "https://registry.yarnpkg.com/@replayio/replay/-/replay-0.12.12.tgz#e3cd09c169a24fb0daab3d9f5e0aa729258b9845"
+  integrity sha512-myuviCc3l8K1P9jM5AIcZYaP+PeiAaJoYXvMQsG+T4f76j282hUPcpwg3M1y3Qrvd29ZrOG34SSw2hTb01yFbQ==
   dependencies:
     "@replayio/sourcemap-upload" "^1.0.7"
     commander "^7.2.0"
@@ -650,12 +650,12 @@
     node-fetch "^2.6.1"
     string.prototype.matchall "^4.0.5"
 
-"@replayio/test-utils@^0.5.7":
-  version "0.5.7"
-  resolved "https://registry.yarnpkg.com/@replayio/test-utils/-/test-utils-0.5.7.tgz#dd7aa98c09ba51a5223b2c9da00ca0ac410e254f"
-  integrity sha512-U3qlF0lZ1WCJAMJ6KyRBc5yvZ+JE+fwfgCMfVFTiw2zN8Xmx949shOLLwW5H7PSAowhMrJEz+6xhO+162Jb5Xw==
+"@replayio/test-utils@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@replayio/test-utils/-/test-utils-1.0.0.tgz#1171e9fd9555ba4e7b557dc674dd1e6ddb09d86a"
+  integrity sha512-f+SluJJRX7dmHWyXFAXov17iC9bxEFA33XU4QFiq18S3Pd/m2zbr84ETN4g2LZJPQ8AfA68gMBjcXN9Ft5DBtA==
   dependencies:
-    "@replayio/replay" "^0.12.8"
+    "@replayio/replay" "^0.12.12"
     "@types/node-fetch" "^2.6.2"
     debug "^4.3.4"
     node-fetch "^2.6.7"

@@ -19,7 +19,7 @@
     "webpack-react-component-name": "^5.0.4"
   },
   "devDependencies": {
-    "@replayio/cypress": "^0.5.13",
+    "@replayio/cypress": "^1.0.1",
     "cypress": "^12.7.0",
     "webpack": "^5.75.0"
   }
