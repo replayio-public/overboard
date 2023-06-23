@@ -1,5 +1,11 @@
 name: End-to-end tests
-on: [push]
+on: 
+  push:
+    branches:
+      - main # or any other branches you wish to include
+  schedule:
+    - cron: '0 */6 * * *' # This line runs the workflow every 6 hours
+
 jobs:
   cypress-run:
     runs-on: ubuntu-22.04
