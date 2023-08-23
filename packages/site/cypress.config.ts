@@ -1,8 +1,9 @@
 import { defineConfig } from "cypress";
-import replay from "@replayio/cypress"
+import replay from "@replayio/cypress";
 
 export default defineConfig({
   e2e: {
+    video: false,
     baseUrl: "http://localhost:3000",
     setupNodeEvents(on, config) {
       // implement node event listeners here

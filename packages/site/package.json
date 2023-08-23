@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "test:e2e": "cypress run --browser=replay-firefox"
+    "test:e2e": "cypress run --browser=replay-chromium"
   },
   "dependencies": {
     "@replayio/overboard": "*",
@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "webpack": "^5.75.0",
-    "@replayio/cypress": "^1.0.1",
+    "@replayio/cypress": "^1.2.0",
     "cypress": "^12.14.0"
   }
 }
