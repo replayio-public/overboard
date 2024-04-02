@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "webpack": "^5.75.0",
-    "@replayio/cypress": "^1.2.0",
+    "@replayio/cypress": "^1.7.20",
     "cypress": "^12.14.0"
   }
 }
