@@ -8,7 +8,8 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "format": "prettier '**/*' --write --ignore-unknown",
-    "test:e2e": "turbo run test:e2e"
+    "test:cypress": "turbo run test:cypress",
+    "test:playwright": "turbo run test:playwright"
   },
   "devDependencies": {
     "@babel/cli": "^7.18.10",

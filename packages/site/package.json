@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "test:e2e": "cypress run --browser=replay-chromium"
+    "test:cypress": "cypress run --browser=replay-chromium",
+    "test:playwright": "playwright test"
   },
   "dependencies": {
     "@replayio/overboard": "*",
@@ -19,7 +20,10 @@
     "webpack-react-component-name": "^5.0.4"
   },
   "devDependencies": {
+    "@playwright/test": "^1.42.1",
+    "@replayio/playwright": "^2.0.0-alpha.9",
     "@replayio/cypress": "^1.7.20",
+    "@types/node": "^20.12.2",
     "cypress": "^12.14.0",
     "webpack": "^5.75.0"
   }
