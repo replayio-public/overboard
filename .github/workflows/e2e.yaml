@@ -16,18 +16,16 @@ jobs:
 
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
-      - name: Install deps and prepare
-        uses: cypress-io/github-action@v5.1.0
-        with:
-          build: yarn build
-          runTests: false
+      - name: Install deps
+        run: yarn
+
+      - name: Build packages
+        run: yarn build
+
+      - name: Start server
+        run: yarn dev&
 
       - name: Run tests
-        uses: cypress-io/github-action@v5.1.0
-        with:
-          start: yarn dev
-          working-directory: ./packages/site
-          install: false
-          browser: replay-chromium
+        run: yarn test:e2e
         env:
           REPLAY_API_KEY: ${{ secrets.REPLAY_API_KEY }}
