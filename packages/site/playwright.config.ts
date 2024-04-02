@@ -1,6 +1,10 @@
 import { devices, PlaywrightTestConfig, defineConfig } from '@playwright/test';
 import { devices as replayDevices } from "@replayio/playwright";
 
+import dotenv from 'dotenv';
+dotenv.config({ path: '.env' });
+
+
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -22,7 +26,7 @@ const config: PlaywrightTestConfig = defineConfig({
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
-    ['html'],
+    ['line'],
     [
       "@replayio/playwright/reporter",
       {

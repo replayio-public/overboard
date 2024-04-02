@@ -8,10 +8,12 @@
     "dev": "next dev",
     "build": "next build",
     "test:cypress": "cypress run --browser=replay-chromium",
-    "test:playwright": "playwright test"
+    "test:playwright": "playwright test  --project replay-chromium --headed --reporter=@replayio/playwright/reporter"
   },
   "dependencies": {
     "@replayio/overboard": "*",
+    "axios": "^1.6.8",
+    "dotenv": "^16.4.5",
     "next": "^12.2.4",
     "next-transpile-modules": "^9.0.0",
     "react": "*",
@@ -20,9 +22,9 @@
     "webpack-react-component-name": "^5.0.4"
   },
   "devDependencies": {
-    "@playwright/test": "^1.42.1",
-    "@replayio/playwright": "^2.0.0-alpha.9",
+    "@playwright/test": "1.37.0",
     "@replayio/cypress": "^1.7.20",
+    "@replayio/playwright": "^2.0.0-alpha.9",
     "@types/node": "^20.12.2",
     "cypress": "^12.14.0",
     "webpack": "^5.75.0"

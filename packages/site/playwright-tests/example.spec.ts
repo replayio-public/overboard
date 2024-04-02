@@ -1,24 +1,40 @@
-import { test, expect } from '@playwright/test';
+// import test, { expect } from "../testFixtureTestSuiteDashboard";
+import { test, expect, Page } from '@playwright/test';
 
-test('sets a color', async ({ page }) => {
+async function selectColor(page: Page, color: "blue" | "green" | "red") {
+  await page.locator(`[data-cy=${color}]`).click();
+}
+
+async function addToCart(page: Page) {
+  await page.locator(`[data-cy=AddToCartButton]`).click();
+}
+
+async function verifyAddToCartDidNotFail(page) {
+  const errorElement = await page.locator('[data-cy=AddToCartButtonError]');
+  await expect(errorElement).toHaveCount(0);
+}
+
+// test.use({ testRunState: "SUCCESS_IN_MAIN_WITH_SOURCE" });
+
+test('select color', async ({ page }) => {
+  // test('select color', async ({ pageWithMeta: { page } }) => {
   await page.goto('http://localhost:3000');
 
-  // Click the get started link.
-  await page.locator('[data-cy=blue]').click();
-  await page.locator('[data-cy=green]').click();
+  await selectColor(page, "blue")
+  await selectColor(page, "green")
 });
 
 
+// test('can buy board', async ({ pageWithMeta: { page } }) => {
 test('can buy board', async ({ page }) => {
   await page.goto('http://localhost:3000');
 
-  await page.locator('[data-cy=blue]').click();
-  await page.locator('[data-cy=green]').click();
-  await page.locator('[data-cy=AddToCartButton]').click();
+  await selectColor(page, "blue")
+  await selectColor(page, "green")
+  await selectColor(page, "blue")
+  await addToCart(page)
 
   // Wait for any potential network requests or changes after clicking the button
   await page.waitForTimeout(1_000);
-
-  const errorElement = await page.locator('[data-cy=AddToCartButtonError]');
-  await expect(errorElement).toHaveCount(0);
-})
+  await verifyAddToCartDidNotFail(page);
+});
