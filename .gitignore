@@ -1,5 +1,6 @@
 .DS_Store
 .next
+.env
 .turbo
 dist
 node_modules

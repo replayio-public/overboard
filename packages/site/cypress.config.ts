@@ -1,5 +1,5 @@
 import { defineConfig } from "cypress";
-import replay from "@replayio/cypress";
+const { plugin: replayPlugin } = require("@replayio/cypress");
 
 export default defineConfig({
   e2e: {
@@ -8,7 +8,11 @@ export default defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
       // 🙋‍♂️ Add this line to install the replay plugin
-      replay(on, config);
+      replayPlugin(on, config, {
+        upload: true,
+        apiKey: process.env.REPLAY_API_KEY,
+      });
+
       return config;
     },
   },

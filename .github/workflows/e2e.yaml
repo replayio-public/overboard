@@ -1,10 +1,11 @@
 name: End-to-end tests
 on: 
+  pull_request: {}
   push:
     branches:
       - main # or any other branches you wish to include
   schedule:
-    - cron: '0 */6 * * *' # This line runs the workflow every 6 hours
+    - cron: 0 */6 * * * # This line runs the workflow every 6 hours
 
 jobs:
   cypress-run:
@@ -18,21 +19,15 @@ jobs:
       - name: Install deps and prepare
         uses: cypress-io/github-action@v5.1.0
         with:
-          build: npm run build
+          build: yarn build
           runTests: false
 
       - name: Run tests
         uses: cypress-io/github-action@v5.1.0
         with:
-          start: npm run dev
+          start: yarn dev
           working-directory: ./packages/site
           install: false
           browser: replay-chromium
-
-
-      # Always run this step so failed tests are uploaded
-      - name: Upload replays
-        if: always()
-        uses: replayio/action-upload@v0.5.1
-        with:
-          api-key: ${{ secrets.RECORD_REPLAY_API_KEY }}
+        env:
+          REPLAY_API_KEY: ${{ secrets.REPLAY_API_KEY }}
