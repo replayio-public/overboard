@@ -1,5 +1,5 @@
 import { defineConfig } from "cypress";
-const { plugin: replayPlugin } = require("@replayio/cypress");
+import { plugin as replayPlugin } from "@replayio/cypress";
 
 export default defineConfig({
   e2e: {
