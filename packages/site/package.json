@@ -8,7 +8,7 @@
     "dev": "next dev",
     "build": "next build",
     "test:cypress": "cypress run --browser=replay-chromium",
-    "test:playwright": "DEBUG=replay:* playwright test  --project replay-chromium --reporter=@replayio/playwright/reporter,line"
+    "test:playwright": "playwright test  --project replay-chromium"
   },
   "dependencies": {
     "@replayio/overboard": "*",
