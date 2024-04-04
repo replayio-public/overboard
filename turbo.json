@@ -2,17 +2,15 @@
   "baseBranch": "origin/main",
   "pipeline": {
     "build": {
-      "dependsOn": [
-        "^build"
-      ],
-      "outputs": [
-        ".next/**"
-      ]
+      "dependsOn": ["^build"],
+      "outputs": [".next/**"]
     },
     "test:cypress": {
-      "dependsOn": [
-        "^build"
-      ],
+      "dependsOn": ["^build"],
+      "outputs": []
+    },
+    "test:playwright": {
+      "dependsOn": ["^build"],
       "outputs": []
     },
     "lint": {
