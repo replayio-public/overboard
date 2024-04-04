@@ -28,4 +28,4 @@ jobs:
       - name: Run tests
         run: yarn test:cypress
         env:
-          REPLAY_API_KEY: ${{ secrets.REPLAY_API_KEY }}
+          CYPRESS_REPLAY_API_KEY: ${{ secrets.CYPRESS_REPLAY_API_KEY }}
