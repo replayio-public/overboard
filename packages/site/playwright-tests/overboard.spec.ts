@@ -1,4 +1,3 @@
-// import test, { expect } from "../testFixtureTestSuiteDashboard";
 import { test, expect, Page } from '@playwright/test';
 
 async function selectColor(page: Page, color: "blue" | "green" | "red") {
@@ -14,21 +13,14 @@ async function verifyAddToCartDidNotFail(page) {
   await expect(errorElement).toHaveCount(0);
 }
 
-
-
-// test.use({ testRunState: "SUCCESS_IN_MAIN_WITH_SOURCE" });
-
-test('Playwright :: select color', async ({ page }) => {
-  // test('select color', async ({ pageWithMeta: { page } }) => {
+test('select color', async ({ page }) => {
   await page.goto('http://localhost:3000');
 
   await selectColor(page, "blue")
   await selectColor(page, "green")
 });
 
-
-// test('can buy board', async ({ pageWithMeta: { page } }) => {
-test('Playwright :: can buy board', async ({ page }) => {
+test('can buy board', async ({ page }) => {
   await page.goto('http://localhost:3000');
 
   await selectColor(page, "blue")

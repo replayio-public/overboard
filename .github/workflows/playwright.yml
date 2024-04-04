@@ -23,7 +23,7 @@ jobs:
     - name: Run Playwright tests
       run: yarn test:playwright
       env:
-          PLAYWRIGHT_REPLAY_API_KEY: ${{ secrets.REPLAY_API_KEY }}
+          PLAYWRIGHT_REPLAY_API_KEY: ${{ secrets.PLAYWRIGHT_REPLAY_API_KEY }}
           REPLAY_PLAYWRIGHT_FIXTURE: ${{ secrets.REPLAY_PLAYWRIGHT_FIXTURE }}
     - uses: actions/upload-artifact@v4
       if: always()
