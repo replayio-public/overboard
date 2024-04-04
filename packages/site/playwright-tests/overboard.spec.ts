@@ -18,7 +18,7 @@ async function verifyAddToCartDidNotFail(page) {
 
 // test.use({ testRunState: "SUCCESS_IN_MAIN_WITH_SOURCE" });
 
-test('select color', async ({ page }) => {
+test('Playwright :: select color', async ({ page }) => {
   // test('select color', async ({ pageWithMeta: { page } }) => {
   await page.goto('http://localhost:3000');
 
@@ -28,7 +28,7 @@ test('select color', async ({ page }) => {
 
 
 // test('can buy board', async ({ pageWithMeta: { page } }) => {
-test('can buy board', async ({ page }) => {
+test('Playwright :: can buy board', async ({ page }) => {
   await page.goto('http://localhost:3000');
 
   await selectColor(page, "blue")
