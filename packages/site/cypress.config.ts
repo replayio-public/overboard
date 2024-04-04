@@ -10,7 +10,7 @@ export default defineConfig({
       // 🙋‍♂️ Add this line to install the replay plugin
       replayPlugin(on, config, {
         upload: true,
-        apiKey: process.env.REPLAY_API_KEY,
+        apiKey: process.env.CYPRESS_REPLAY_API_KEY,
       });
 
       return config;
