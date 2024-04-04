@@ -19,6 +19,8 @@ jobs:
     - name: Run Playwright tests
       run: yarn test:playwright
       working-directory: ./packages/site
+      env:
+          REPLAY_API_KEY: ${{ secrets.REPLAY_API_KEY }}
     - uses: actions/upload-artifact@v4
       if: always()
       with:
