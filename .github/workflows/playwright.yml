@@ -13,10 +13,9 @@ jobs:
     - uses: actions/setup-node@v4
       with:
         node-version: lts/*
-    - name: Install Playwright Browsers
-      run: yarn playwright install --with-deps
     - name: Run Playwright tests
-      run: yarn playwright test
+      run: yarn test:playwright
+      working-directory: ./packages/site
     - uses: actions/upload-artifact@v4
       if: always()
       with:
