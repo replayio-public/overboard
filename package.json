@@ -4,17 +4,19 @@
   "workspaces": [
     "packages/*"
   ],
+  "packageManager": "yarn@1.22.19",
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
     "format": "prettier '**/*' --write --ignore-unknown",
-    "test:e2e": "turbo run test:e2e"
+    "test:cypress": "turbo run test:cypress",
+    "test:playwright": "turbo run test:playwright"
   },
   "devDependencies": {
     "@babel/cli": "^7.18.10",
     "@babel/core": "^7.18.10",
-    "@babel/preset-react": "^7.18.6",
     "@babel/plugin-transform-react-display-name": "^7.18.6",
+    "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.18.6",
     "@types/node": "^18.6.3",
     "@types/react": "^18.0.15",
@@ -24,5 +26,9 @@
     "react-dom": "^18.2.0",
     "turbo": "1.4.2",
     "typescript": "^4.7.4"
+  },
+  "resolutions": {
+    "@replayio/replay": "0.21.4",
+    "@replayio/test-utils": "1.3.16"
   }
 }

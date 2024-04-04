@@ -5,7 +5,11 @@
       "dependsOn": ["^build"],
       "outputs": [".next/**"]
     },
-    "test:e2e": {
+    "test:cypress": {
+      "dependsOn": ["^build"],
+      "outputs": []
+    },
+    "test:playwright": {
       "dependsOn": ["^build"],
       "outputs": []
     },

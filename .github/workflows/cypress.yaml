@@ -1,4 +1,4 @@
-name: End-to-end tests
+name: Cypress tests
 on: 
   pull_request: {}
   push:
@@ -26,6 +26,6 @@ jobs:
         run: yarn dev&
 
       - name: Run tests
-        run: yarn test:e2e
+        run: yarn test:cypress
         env:
           REPLAY_API_KEY: ${{ secrets.REPLAY_API_KEY }}

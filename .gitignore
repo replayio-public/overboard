@@ -7,3 +7,5 @@ node_modules
 out
 packages/site/cypress/screenshots
 *.log
+.yarn
+.yarnrc.yml
