@@ -24,7 +24,7 @@
   "devDependencies": {
     "@playwright/test": "1.37.0",
     "@replayio/cypress": "^1.7.20",
-    "@replayio/playwright": "^2.0.0-alpha.9",
+    "@replayio/playwright": "3.0.0-alpha.1",
     "@types/node": "^20.12.2",
     "cypress": "^12.14.0",
     "webpack": "^5.75.0"
