@@ -21,7 +21,7 @@ jobs:
       working-directory: ./packages/site
       env:
           REPLAY_API_KEY: ${{ secrets.REPLAY_API_KEY }}
-          PLAYWRIGHT_REPLAY_API_KEY: ${{ secrets.PLAYWRIGHT_REPLAY_API_KEY }}
+          PLAYWRIGHT_REPLAY_API_KEY: ${{ secrets.REPLAY_API_KEY }}
     - uses: actions/upload-artifact@v4
       if: always()
       with:
