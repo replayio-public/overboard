@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
@@ -28,4 +28,4 @@ jobs:
       - name: Run tests
         run: yarn test:cypress
         env:
-          REPLAY_API_KEY: ${{ secrets.REPLAY_API_KEY }}
+          REPLAY_API_KEY: ${{ secrets.CYPRESS_REPLAY_API_KEY }}
