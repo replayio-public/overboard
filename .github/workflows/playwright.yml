@@ -24,7 +24,6 @@ jobs:
       run: yarn test:playwright
       env:
           REPLAY_API_KEY: ${{ secrets.PLAYWRIGHT_REPLAY_API_KEY }}
-          REPLAY_PLAYWRIGHT_FIXTURE: ${{ secrets.REPLAY_PLAYWRIGHT_FIXTURE }}
     - uses: actions/upload-artifact@v4
       if: always()
       with:
