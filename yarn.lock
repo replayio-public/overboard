@@ -595,10 +595,10 @@
     uuid "^8.3.2"
     ws "^8.14.2"
 
-"@replayio/playwright@3.0.0-alpha.6":
-  version "3.0.0-alpha.6"
-  resolved "https://registry.yarnpkg.com/@replayio/playwright/-/playwright-3.0.0-alpha.6.tgz#535d5988a5d8be68c9bd90884fce479710a7ef48"
-  integrity sha512-5ODrssKVVjCkYWMykF7WjiH/ctJEqmJu6C/J5onXrEd0txj+5fYQAarmnQfW/fhBYCcBwc75/3I8KdH5PFhkNw==
+"@replayio/playwright@3.0.0-alpha.7":
+  version "3.0.0-alpha.7"
+  resolved "https://registry.yarnpkg.com/@replayio/playwright/-/playwright-3.0.0-alpha.7.tgz#b773d4a54e472ee3f476a3be4dbecf78c1da96a7"
+  integrity sha512-uaGxNvcQmH3okTqDa7+9anmLfB8IldTY3dWgKvN/h+7F++p44d87iVNStZUyDKFk2kjGSEMD1p56mNiv/TjEwQ==
   dependencies:
     "@replayio/replay" "^0.22.3"
     "@replayio/test-utils" "^2.0.1"
