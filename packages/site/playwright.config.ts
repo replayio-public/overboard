@@ -1,9 +1,8 @@
-import { devices, PlaywrightTestConfig, defineConfig } from '@playwright/test';
-import { devices as replayDevices } from "@replayio/playwright";
+import { defineConfig, devices } from "@playwright/test";
+import { devices as replayDevices, createReplayReporterConfig } from "@replayio/playwright";
 
-import dotenv from 'dotenv';
-dotenv.config({ path: '.env' });
-
+import dotenv from "dotenv";
+dotenv.config({ path: ".env" });
 
 /**
  * Read environment variables from file.
@@ -14,8 +13,8 @@ dotenv.config({ path: '.env' });
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
-const config: PlaywrightTestConfig = defineConfig({
-  testDir: './playwright-tests',
+const config = defineConfig({
+  testDir: "./playwright-tests",
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -25,15 +24,13 @@ const config: PlaywrightTestConfig = defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
+  // globalSetup: "@replayio/playwright/global-setup",
   reporter: [
-    ['line'],
-    [
-      "@replayio/playwright/reporter",
-      {
-        apiKey: process.env.PLAYWRIGHT_REPLAY_API_KEY,
-        upload: true,
-      },
-    ],
+    ["line"],
+    createReplayReporterConfig({
+      apiKey: process.env.PLAYWRIGHT_REPLAY_API_KEY,
+      upload: true,
+    }),
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
@@ -41,26 +38,25 @@ const config: PlaywrightTestConfig = defineConfig({
     // baseURL: 'http://127.0.0.1:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
+    trace: "on-first-retry",
   },
 
   /* Configure projects for major browsers */
   projects: [
     {
       name: "replay-chromium",
-      use: { ...(replayDevices["Replay Chromium"] as any) },
+      use: { ...replayDevices["Replay Chromium"] },
     },
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      name: "chromium",
+      use: { ...devices["Desktop Chrome"] },
     },
-
   ],
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'yarn dev',
-    url: 'http://127.0.0.1:3000',
+    command: "yarn dev",
+    url: "http://127.0.0.1:3000",
     reuseExistingServer: !process.env.CI,
   },
 });
